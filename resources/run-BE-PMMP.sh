@@ -1,9 +1,4 @@
 #!/bin/sh
-chmod 111 /minecraft/resources -R
-chmod 111 /minecraft/bin -R
-chmod 777 /minecraft/server -R
-chown ftpuser /minecraft/server -R
-
 if [ -e /minecraft/server/mochikomi.phar  ]; then
 	PHARNAME=/minecraft/server/mochikomi.phar
 fi

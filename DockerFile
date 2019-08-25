@@ -27,7 +27,7 @@ RUN sh pre-FTP.sh
 #BDS and Cuberite and ...
 RUN sh pre-BE-PMMP.sh
 RUN sh pre-BE-BDS.sh
-#RUN sh pre-BE-Cuberite.sh
+RUN sh pre-BE-Cuberite.sh
 #RUN sh pre-Java-Minecraft.sh
 #RUN sh pre-Java-Spigot.sh
 
@@ -43,5 +43,5 @@ EXPOSE 80/tcp
 
 #Minecraft and FTP
 WORKDIR /minecraft/server
-#TODO background, mochikomi.phar or not
-CMD sh /minecraft/resources/run-Main.sh && /minecraft/resources/run-PureFTPD.sh
+
+CMD sh /minecraft/resources/run-Main.sh
