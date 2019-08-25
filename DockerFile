@@ -1,15 +1,20 @@
 #Base image
 MAINTAINER haniokasai <htek@haniokasai.com>
 
-FROM alpine:3.7
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
 # RUN: when image is being built
 RUN echo "BUILDING PROCESS"
-RUN apk --no-cache add bash vsftpd
+RUN apt update
+RUN apt install bash pure-ftpd
 
 RUN mkdir /minecraft
 RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/resources
 RUN mkdir /minecraft/bin
+#serverフォルダはバックアップする
 RUN mkdir /minecraft/server
 
 #Copy& extract Bin
@@ -28,9 +33,15 @@ RUN sh pre-Java-Spigot.sh
 
 
 #PORT
-EXPOSE 21
-EXPOSE 19132
+##FTP
+EXPOSE 21/tcp
+##Minecraft
+EXPOSE 19132/udp
+##Cuberite Admin
+EXPOSE 80
+
 
 #Minecraft and FTP
 WORKDIR /minecraft/server
-CMD sh /minecraft/resources/runsever.sh && /minecraft/resources/runftp.sh
+#TODO background, mochikomi.phar or not
+CMD sh /minecraft/resources/runsever.sh && /minecraft/resources/run-PureFTPD.sh
