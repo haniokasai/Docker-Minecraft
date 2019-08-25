@@ -8,6 +8,9 @@ if [[ -z "${PHARNAME}" ]]; then
 	exit 1 
 else
 	echo "Starting PMMP..." >&1
+	
+	git clone & plugin put (if plugin change enable)
+	
 	/minecraft/bin/php7/bin/php \
 		-n \
 		-d "open_basedir=/tmp:phar://:/minecraft/server" \
