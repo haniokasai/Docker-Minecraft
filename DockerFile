@@ -10,11 +10,14 @@ RUN echo "BUILDING PROCESS"
 RUN apt update
 RUN apt install bash pure-ftpd wget curl git zip
 
+#Make necessary dirs
 RUN mkdir /minecraft
-RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/resources
 RUN mkdir /minecraft/bin
 RUN mkdir /minecraft/server
+##These dirs are for PM-MP there should be mounted.
+RUN mkdir /minecraft/multiphar
+RUN mkdir /minecraft/defaultplugins
 
 #Copy& extract Bin
 ADD ./resources/*  /minecraft/resources/
