@@ -14,7 +14,6 @@ RUN mkdir /minecraft
 RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/resources
 RUN mkdir /minecraft/bin
-#serverフォルダはバックアップする
 RUN mkdir /minecraft/server
 
 #Copy& extract Bin
