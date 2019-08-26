@@ -1,4 +1,5 @@
 #!/bin/sh
+
 if [[ -z "${PHARNAME}" ]]; then
 	echo "PHARNAME is not setted" >&2
 	exit 1 

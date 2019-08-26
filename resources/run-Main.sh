@@ -22,6 +22,7 @@ echo $! > /minecraft/bin/pureftpd.pid
 #Minecraft#
 ###########
 cd /minecraft/server
+rm -rf /minecraft/server/resource_packs
 if [ "${SRVTYPE}" is "pmmp" ]; then
 	sh /minecraft/resources/run-BE-PMMP.sh
 	
