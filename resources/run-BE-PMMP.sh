@@ -5,7 +5,7 @@ if [[ -z "${PHARNAME}" ]]; then
 else
 	echo "Starting PMMP..." >&1
     sleep 1
-    PHARFILE = "/minecraft/multiphar/{${PHARNAME}}"
+    PHARFILE = "/minecraft/multiphar/${PHARNAME}"
 
 	if [ PHARNAME="mochikomi" ];then
 	    if [ -e /minecraft/server/mochikomi.phar  ]; then
@@ -23,9 +23,9 @@ else
 	        	echo "/minecraft/server/mochikomi.phar is not found" >&2
 	            exit 1
         fi
-    elif [ -e "/minecraft/multiphar/{${PHARNAME}}"  ]; then
+    elif [ -e "/minecraft/multiphar/${PHARNAME}"  ]; then
         echo "Phar founded!" >&1
-        PHARFILE = "/minecraft/multiphar/{${PHARNAME}}"
+        PHARFILE = "/minecraft/multiphar/${PHARNAME}"
     else
         echo "Phar not found." >&2
 	    exit 1
@@ -52,5 +52,5 @@ else
 		-d "default_charset=utf-8" \
 		-d "assert.exception=1" \
 		-d "error_reporting=0" \
-		"{${PHARFILE}}"
+		"${PHARFILE}"
 fi

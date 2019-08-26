@@ -2,7 +2,7 @@
 
 groupadd ftpgroup && \
 useradd -g ftpgroup -d /dev/null -s /etc ftpuser  
-
+#タイミング悪くね！作成時にパスワードじゃ間に合わん。
 echo "${SRVID}:${PASSWD}" > passwdlist
 pure-pw useradd ${SRVID} -u ftpuser -d /minecraft/server
 
