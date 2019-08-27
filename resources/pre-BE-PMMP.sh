@@ -6,18 +6,18 @@ CONFIGFILE = /minecraft/server/server.properties
 
 #env
 if [[ -z "${WORLDTYPE}" ]]; then
-    WORLDTYPE = "flat"
+	WORLDTYPE = "flat"
 fi
 if [[! "${WORLDTYPE}" -eq "flat"]]; then
-     WORLDTYPE -eq  "default"
+	 WORLDTYPE -eq  "default"
 fi
 if [[ -z "${GAMEMODE}" ]]; then
-    GAMEMODE = "creative"
+	GAMEMODE = "creative"
 fi
 if [[ ${GAMEMODE} = "creative" ]];then
-    GAMEMODE = 1
+	GAMEMODE = 1
 else
-    GAMEMODE = 0
+	GAMEMODE = 0
 fi
 if [[ -z "${SRVDOMAIN}" ]]; then
 	SRVDOMAIN = "0.0.0.0"

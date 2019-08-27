@@ -14,13 +14,13 @@ if [[ -e /minecraft/bin/initialstart ]]; then # aaa,txtはあるか？
 	#FTP prepare#
 	#-----------#
 	if [[ -z "${SRVID}" ]]; then
-	    echo "SRVID is not setted"
-	    exit 1
-    fi
-    if [[ -z "${PASSWD}" ]]; then
-	    echo "PASSWD is not setted"
-	    exit 1
-    fi
+		echo "SRVID is not setted"
+		exit 1
+	fi
+	if [[ -z "${PASSWD}" ]]; then
+		echo "PASSWD is not setted"
+		exit 1
+	fi
 
 	sh pre-FTP.sh
 	#-----------------#
@@ -28,26 +28,26 @@ if [[ -e /minecraft/bin/initialstart ]]; then # aaa,txtはあるか？
 	#-----------------#
 
 	if [ "${SRVTYPE}" -eq  "pmmp" ]; then
-        #WORLDTYPE, GAMEMODE, SRVDOMAIN
-	    sh /minecraft/resources/pre-BE-PMMP.sh
+		#WORLDTYPE, GAMEMODE, SRVDOMAIN
+		sh /minecraft/resources/pre-BE-PMMP.sh
 
-    elif [ "${SRVTYPE}" -eq  "beof" ]; then
-        #DIFFICULTY, GAMEMODE, PERMISSION
-	    sh /minecraft/resources/pre-BE-BDS.sh
+	elif [ "${SRVTYPE}" -eq  "beof" ]; then
+		#DIFFICULTY, GAMEMODE, PERMISSION
+		sh /minecraft/resources/pre-BE-BDS.sh
 
-    elif [ "${SRVTYPE}" -eq  "cuberite" ]; then
-	    sh /minecraft/resources/pre-BE-Cuberite.sh
+	elif [ "${SRVTYPE}" -eq  "cuberite" ]; then
+		sh /minecraft/resources/pre-BE-Cuberite.sh
 
-    elif [ "${SRVTYPE}" -eq  "mcpc" ]; then
-	    sh /minecraft/resources/pre-MCPC.sh
+	elif [ "${SRVTYPE}" -eq  "mcpc" ]; then
+		sh /minecraft/resources/pre-MCPC.sh
 
-    elif [ "${SRVTYPE}" -eq  "spigot" ]; then
-	    sh /minecraft/resources/pre-SPIG.sh
+	elif [ "${SRVTYPE}" -eq  "spigot" ]; then
+		sh /minecraft/resources/pre-SPIG.sh
 
-    else
-	    echo 'Invalid SRVTYPE!' >&2
-	    ER="true"
-    fi
+	else
+		echo 'Invalid SRVTYPE!' >&2
+		ER="true"
+	fi
 
 fi
 
@@ -60,8 +60,8 @@ sh /minecraft/resources/setPerm.sh
 #Start FTP #
 ############
 if [ ! -e "/minecraft/bin/nonftp"  ]; then
-    exec /usr/sbin/pure-ftpd -l pam -l puredb:/etc/pure-ftpd/pureftpd.pdb 1000 -8 UTF-8 --noanonymous --userbandwidth --quota 10000:15 &
-    echo $! > /minecraft/bin/pureftpd.pid
+	exec /usr/sbin/pure-ftpd -l pam -l puredb:/etc/pure-ftpd/pureftpd.pdb 1000 -8 UTF-8 --noanonymous --userbandwidth --quota 10000:15 &
+	echo $! > /minecraft/bin/pureftpd.pid
 fi
 
 ############
