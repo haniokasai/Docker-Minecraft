@@ -2,26 +2,26 @@
 echo "pre process...." >&1
 tar zxvf /minecraft/resources/PHP*.tar.gz /minecraft/bin
 mkdir -p /minecraft/server/plugins
-CONFIGFILE = /minecraft/server/server.properties
+CONFIGFILE=/minecraft/server/server.properties
 mv /minecraft/resources/pmmp_* /minecraft/server/pmmp.phar
 
 #env
 if [ -z "${WORLDTYPE}" ]; then
-	WORLDTYPE = "flat"
+	WORLDTYPE="flat"
 fi
 if [ ! "${WORLDTYPE}" = "flat" ]; then
 	 WORLDTYPE =  "default"
 fi
 if [ -z "${GAMEMODE}" ]; then
-	GAMEMODE = "creative"
+	GAMEMODE="creative"
 fi
 if [ ${GAMEMODE} = "creative" ];then
-	GAMEMODE = 1
+	GAMEMODE=1
 else
-	GAMEMODE = 0
+	GAMEMODE=0
 fi
 if [ -z "${SRVDOMAIN}" ]; then
-	SRVDOMAIN = "0.0.0.0"
+	SRVDOMAIN="0.0.0.0"
 fi
 
 #config

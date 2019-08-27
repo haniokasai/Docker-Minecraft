@@ -2,7 +2,7 @@
 
 echo "Starting PMMP..." >&1
 sleep 1
-PHARFILE = "/minecraft/resources/pmmp.phar"
+PHARFILE="/minecraft/resources/pmmp.phar"
 
 if [ -e "/minecraft/nonftp" ]; then
 	sh /minecraft/resources/pluginSync.sh
@@ -12,7 +12,7 @@ fi
 	
 if [ -e ${PHARFILE} ]; then
 	echo "Phar founded!" >&1
-	RESULT = $(/minecraft/bin/php7/bin/php /minecraft/resources/pharvalid.php PHARFILE)
+	RESULT=$(/minecraft/bin/php7/bin/php /minecraft/resources/pharvalid.php PHARFILE)
 	echo ${RESULT}
 	if  [ "`echo ${RESULT} | grep hash`" ]; then
 		echo "Phar is valid!" >&1

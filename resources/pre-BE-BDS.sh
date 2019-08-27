@@ -9,36 +9,36 @@ cd /minecraft/server
 
 
 if [ -z "${DIFFICULTY}" ]; then
-	DIFFICULTY = "normal"
+	DIFFICULTY="normal"
 fi
 if [ ${DIFFICULTY} = "hard" ];then
-	DIFFICULTY = "hard"
+	DIFFICULTY="hard"
 elif [ ${DIFFICULTY} = "peaceful" ];then
-	DIFFICULTY = "peaceful"
+	DIFFICULTY="peaceful"
 elif [ ${DIFFICULTY} = "easy" ];then
-	DIFFICULTY = "easy"
+	DIFFICULTY="easy"
 else
-	DIFFICULTY = "normal"
+	DIFFICULTY="normal"
 fi
 
 if [ -z "${GAMEMODE}" ]; then
-	GAMEMODE = "creative"
+	GAMEMODE="creative"
 fi
 if [ ${GAMEMODE} = "creative" ];then
-	GAMEMODE = "creative"
+	GAMEMODE="creative"
 else
-	GAMEMODE = "survival"
+	GAMEMODE="survival"
 fi
 
  if [ -z "${PERMISSION}" ]; then
-	DIFFICULTY = "operator"
+	DIFFICULTY="operator"
 fi
 if [ ${PERMISSION} = "visitor" ];then
-	DIFFICULTY = "visitor"
+	DIFFICULTY="visitor"
 elif [ ${PERMISSION} = "member" ];then
-	DIFFICULTY = "member"
+	DIFFICULTY="member"
 else
-	DIFFICULTY = "operator"
+	DIFFICULTY="operator"
 fi
 
 sed -i -e "s/=v=srvid=v=/${SRVID}/g" server.properties
