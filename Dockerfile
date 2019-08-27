@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.04
 MAINTAINER haniokasai <htek@haniokasai.com>
 
 
@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # RUN: when image is being built
 RUN echo "BUILDING PROCESS"
 RUN apt update
-RUN apt install pure-ftpd zip rsync libzip4 curl -y
+RUN apt install pure-ftpd zip rsync libzip5 curl -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
