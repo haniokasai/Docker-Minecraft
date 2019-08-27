@@ -69,6 +69,7 @@ if [ ! -e "/minecraft/nonftp"  ]; then
 	echo "Starting PureFTPd..." >&1
 	exec /usr/sbin/pure-ftpd -l pam -l puredb:/etc/pure-ftpd/pureftpd.pdb 1000 -8 UTF-8 --noanonymous --userbandwidth --quota 10000:15 &
 	echo $! > /minecraft/bin/pureftpd.pid
+	cat /minecraft/bin/pureftpd.pid
 	echo "Starting PureFTPd...done" >&1
 fi
 
@@ -103,6 +104,7 @@ echo "Main Server Start...done" >&1
 #Stop FTP#
 ##########
 echo "Stopping PureFTPd..." >&1
+cat /minecraft/bin/pureftpd.pid
 kill -9 `cat /minecraft/bin/pureftpd.pid`
 rm /minecraft/bin/*.pid
 echo "Stopping PureFTPd...done" >&1
