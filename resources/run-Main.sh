@@ -34,16 +34,12 @@ if [[ -e /minecraft/bin/initialstart ]]; then # aaa,txtはあるか？
 	elif [[ "${SRVTYPE}" -eq  "beof" ]]; then
 		#DIFFICULTY, GAMEMODE, PERMISSION
 		sh /minecraft/resources/pre-BE-BDS.sh
-
 	elif [[ "${SRVTYPE}" -eq  "cuberite" ]]; then
 		sh /minecraft/resources/pre-BE-Cuberite.sh
-
 	elif [[ "${SRVTYPE}" -eq  "mcpc" ]]; then
 		sh /minecraft/resources/pre-MCPC.sh
-
 	elif [[ "${SRVTYPE}" -eq  "spigot" ]]; then
 		sh /minecraft/resources/pre-SPIG.sh
-
 	else
 		echo 'Invalid SRVTYPE!' >&2
 		ER="true"
@@ -71,19 +67,14 @@ cd /minecraft/server
 rm -rf /minecraft/server/resource_packs
 if [[ "${SRVTYPE}" -eq  "pmmp" ]]; then
 	sh /minecraft/resources/run-BE-PMMP.sh
-	
 elif [[ "${SRVTYPE}" -eq  "beof" ]]; then
 	sh /minecraft/resources/run-BE-BDS.sh
-
 elif [[ "${SRVTYPE}" = "cuberite" ]]; then
 	sh /minecraft/resources/run-BE-Cuberite.sh
-
 elif [[ "${SRVTYPE}" -eq  "mcpc" ]]; then
 	sh /minecraft/resources/run-MCPC.sh
-
 elif [[ "${SRVTYPE}" -eq  "spigot" ]]; then
 	sh /minecraft/resources/run-SPIG.sh
-
 else
 	echo 'Invalid SRVTYPE!' >&2
 	ER="true"

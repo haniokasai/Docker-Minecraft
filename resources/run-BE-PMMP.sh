@@ -10,9 +10,8 @@ else
 	echo "PMMP plugins are not synced..." >&1
 fi
 	
-if [[ -e /minecraft/server/pmmp.phar  ]]; then
+if [[ -e PHARFILE  ]]; then
 	echo "Phar founded!" >&1
-	PHARFILE = "/minecraft/server/mochikomi.phar"
 	RESULT = $(/minecraft/bin/php7/bin/php /minecraft/resources/pharvalid.php PHARFILE)
 	echo ${RESULT}
 	if  [[ "`echo ${RESULT} | grep hash`" ]]; then

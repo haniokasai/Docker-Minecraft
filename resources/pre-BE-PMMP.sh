@@ -2,7 +2,7 @@
 tar zxvf /minecraft/resources/PHP-7.3-Linux-x86_64.tar.gz /minecraft/bin
 mkdir -p /minecraft/server/plugins
 CONFIGFILE = /minecraft/server/server.properties
-#config
+mv /minecraft/resources/pmmp_* /minecraft/server/pmmp.phar
 
 #env
 if [[ -z "${WORLDTYPE}" ]]; then
@@ -23,9 +23,13 @@ if [[ -z "${SRVDOMAIN}" ]]; then
 	SRVDOMAIN = "0.0.0.0"
 fi
 
+#config
 echo "motd=${SRVID} [MiRmPE]" > CONFIGFILE
 echo "server-port=19132" > CONFIGFILE
 echo "level-type=${WORLDTYPE}" > CONFIGFILE
 echo "gamemode=${GAMEMODE}" > CONFIGFILE
 echo "server-ip=${SRVDOMAIN}" > CONFIGFILE
 echo "language=jpn" > CONFIGFILE
+
+#plugin
+rsync -av  --include="*/" --include="*.phar" --exclude="*" /minecraft/defaultplugins/ /minecraft/server/plugins --delete
