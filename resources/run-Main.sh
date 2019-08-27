@@ -32,21 +32,21 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 	#Minecraft Prepare#
 	#-----------------#
 
-	if [ "${SRVTYPE}" -eq  "pmmp" ]; then
+	if [ "${SRVTYPE}" =  "pmmp" ]; then
 		#WORLDTYPE, GAMEMODE, SRVDOMAIN
 		echo "Preparation pmmp has been selected." >&1
 		sh /minecraft/resources/pre-BE-PMMP.sh
-	elif [ "${SRVTYPE}" -eq  "beof" ]; then
+	elif [ "${SRVTYPE}" =  "beof" ]; then
 		#DIFFICULTY, GAMEMODE, PERMISSION
 		echo "Preparation BDS has been selected." >&1
 		sh /minecraft/resources/pre-BE-BDS.sh
-	elif [ "${SRVTYPE}" -eq  "cuberite" ]; then
+	elif [ "${SRVTYPE}" =  "cuberite" ]; then
 		echo "Preparation cuberite has been selected." >&1
 		sh /minecraft/resources/pre-BE-Cuberite.sh
-	elif [ "${SRVTYPE}" -eq  "mcpc" ]; then
+	elif [ "${SRVTYPE}" =  "mcpc" ]; then
 		echo "NOT implement Preparation mcpc has been selected." >&1
 		sh /minecraft/resources/pre-MCPC.sh
-	elif [ "${SRVTYPE}" -eq  "spigot" ]; then
+	elif [ "${SRVTYPE}" =  "spigot" ]; then
 		echo "NOT implement Preparation spigot has been selected." >&1
 		sh /minecraft/resources/pre-SPIG.sh
 	else
@@ -77,19 +77,19 @@ fi
 echo "Main Server Start..." >&1
 cd /minecraft/server
 rm -rf /minecraft/server/resource_packs
-if [ "${SRVTYPE}" -eq  "pmmp" ]; then
+if [ "${SRVTYPE}" =  "pmmp" ]; then
 	echo "Starter pmmp has been selected." >&1
 	sh /minecraft/resources/run-BE-PMMP.sh
-elif [ "${SRVTYPE}" -eq  "beof" ]; then
+elif [ "${SRVTYPE}" =  "beof" ]; then
 	echo "Starter beof has been selected." >&1
 	sh /minecraft/resources/run-BE-BDS.sh
 elif [ "${SRVTYPE}" = "cuberite" ]; then
 	echo "Starter cuberite has been selected." >&1
 	sh /minecraft/resources/run-BE-Cuberite.sh
-elif [ "${SRVTYPE}" -eq  "mcpc" ]; then
+elif [ "${SRVTYPE}" =  "mcpc" ]; then
 	echo "Starter mcpc has been selected." >&1
 	sh /minecraft/resources/run-MCPC.sh
-elif [ "${SRVTYPE}" -eq  "spigot" ]; then
+elif [ "${SRVTYPE}" =  "spigot" ]; then
 	echo "Starter spigot has been selected." >&1
 	sh /minecraft/resources/run-SPIG.sh
 else

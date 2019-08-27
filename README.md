@@ -3,15 +3,15 @@ Docker for Minecraft
 
 ```bash
 docker create --name=コンテナ名 \
-	--storage-opt size=0.5g --memory 100M --cpus 0.3\
+	--storage-opt size=0.5g --memory 100M --cpus 0.3 --network=none \
 	-p 19132:"(MiRmでportを配当40000番台、Minecraft)" -p 22:"(MiRmでportを配当5万番台、FTP)" -p  8080:"(MiRmでportを配当30000番台、WebパネorIpv6)"   \
 	-e SRVTYPE="(pmmp,beof,cuberite)"\
 	-e SRVID=サーバー名 -e PASSWD=生パスワード -e OPNAME=OP名 -e GAMEMODE=ゲームモード -e WORLDTYPE=ワールド -e DIFFICULTY=難易度 -e PERMISSION=権限  -e SRVDOMAIN=サーバーのドメイン \
-	-itd haniokasai/docker-minecraft (
+	-itd haniokasai/docker-minecraft
 ```
 
 ```bash
-docker create --name=new --storage-opt size=0.5g -p 20001:19132 -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -it haniokasai/docker-minecraft　(
+docker create --name=new --network=none --storage-opt size=0.5g -p 20001:19132 -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -it haniokasai/docker-minecraft　(
 ```
 
 ```bash

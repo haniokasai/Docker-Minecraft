@@ -9,8 +9,8 @@ mv /minecraft/resources/pmmp_* /minecraft/server/pmmp.phar
 if [ -z "${WORLDTYPE}" ]; then
 	WORLDTYPE = "flat"
 fi
-if [! "${WORLDTYPE}" -eq "flat"]; then
-	 WORLDTYPE -eq  "default"
+if [! "${WORLDTYPE}" = "flat"]; then
+	 WORLDTYPE =  "default"
 fi
 if [ -z "${GAMEMODE}" ]; then
 	GAMEMODE = "creative"
