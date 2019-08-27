@@ -1,7 +1,6 @@
-#Base image
+FROM ubuntu:latest
 MAINTAINER haniokasai <htek@haniokasai.com>
 
-FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
