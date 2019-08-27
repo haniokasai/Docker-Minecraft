@@ -6,21 +6,21 @@ CONFIGFILE = /minecraft/server/server.properties
 mv /minecraft/resources/pmmp_* /minecraft/server/pmmp.phar
 
 #env
-if [[ -z "${WORLDTYPE}" ]]; then
+if [ -z "${WORLDTYPE}" ]; then
 	WORLDTYPE = "flat"
 fi
-if [[! "${WORLDTYPE}" -eq "flat"]]; then
+if [! "${WORLDTYPE}" -eq "flat"]; then
 	 WORLDTYPE -eq  "default"
 fi
-if [[ -z "${GAMEMODE}" ]]; then
+if [ -z "${GAMEMODE}" ]; then
 	GAMEMODE = "creative"
 fi
-if [[ ${GAMEMODE} = "creative" ]];then
+if [ ${GAMEMODE} = "creative" ];then
 	GAMEMODE = 1
 else
 	GAMEMODE = 0
 fi
-if [[ -z "${SRVDOMAIN}" ]]; then
+if [ -z "${SRVDOMAIN}" ]; then
 	SRVDOMAIN = "0.0.0.0"
 fi
 

@@ -7,34 +7,34 @@ mkdir ${WDIR}/bds
 mv ${WDIR}/resources/server.properties.bds /minecraft/server/server.properties
 
 
-if [[ -z "${DIFFICULTY}" ]]; then
+if [ -z "${DIFFICULTY}" ]; then
 	DIFFICULTY = "normal"
 fi
-if [[ ${DIFFICULTY} = "hard" ]];then
+if [ ${DIFFICULTY} = "hard" ];then
 	DIFFICULTY = "hard"
-elif [[ ${DIFFICULTY} = "peaceful" ]];then
+elif [ ${DIFFICULTY} = "peaceful" ];then
 	DIFFICULTY = "peaceful"
-elif [[ ${DIFFICULTY} = "easy" ]];then
+elif [ ${DIFFICULTY} = "easy" ];then
 	DIFFICULTY = "easy"
 else
 	DIFFICULTY = "normal"
 fi
 
-if [[ -z "${GAMEMODE}" ]]; then
+if [ -z "${GAMEMODE}" ]; then
 	GAMEMODE = "creative"
 fi
-if [[ ${GAMEMODE} = "creative" ]];then
+if [ ${GAMEMODE} = "creative" ];then
 	GAMEMODE = "creative"
 else
 	GAMEMODE = "survival"
 fi
 
- if [[ -z "${PERMISSION}" ]]; then
+ if [ -z "${PERMISSION}" ]; then
 	DIFFICULTY = "operator"
 fi
-if [[ ${PERMISSION} = "visitor" ]];then
+if [ ${PERMISSION} = "visitor" ];then
 	DIFFICULTY = "visitor"
-elif [[ ${PERMISSION} = "member" ]];then
+elif [ ${PERMISSION} = "member" ];then
 	DIFFICULTY = "member"
 else
 	DIFFICULTY = "operator"
