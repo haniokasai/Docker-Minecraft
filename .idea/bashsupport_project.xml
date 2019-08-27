@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BashSupportProjectSettings">
+    <option name="globalVariables">
+      <set>
+        <option value="DIFFICULTY" />
+        <option value="GAMEMODE" />
+        <option value="PASSWD" />
+        <option value="PERMISSION" />
+        <option value="PHARFILE" />
+        <option value="PHARNAME" />
+        <option value="RESULT" />
+        <option value="SRVDOMAIN" />
+        <option value="SRVID" />
+        <option value="SRVTYPE" />
+        <option value="WORLDTYPE" />
+      </set>
+    </option>
+  </component>
+</project>
