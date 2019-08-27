@@ -28,26 +28,11 @@ if [ -e /minecraft/bin/initialstart ]; then # aaa,txtはあるか？
 	#-----------------#
 
 	if [ "${SRVTYPE}" -eq  "pmmp" ]; then
-        if [[ -z "${WORLDTYPE}" ]]; then
-            WORLDTYPE = "flat"
-        fi
-        if [[! "${WORLDTYPE}" -eq "flat"]]; then
-             WORLDTYPE -eq  "default"
-        fi
-        if [[ -z "${GAMEMODE}" ]]; then
-            GAMEMODE = "creative"
-        fi
-        if [[ ${GAMEMODE} = "creative" ]];then
-            GAMEMODE = 1
-        else
-            GAMEMODE = 0
-        fi
-        if [[ -z "${SRVDOMAIN}" ]]; then
-	        SRVDOMAIN = "0.0.0.0"
-        fi
+        #WORLDTYPE, GAMEMODE, SRVDOMAIN
 	    sh /minecraft/resources/pre-BE-PMMP.sh
 
     elif [ "${SRVTYPE}" -eq  "beof" ]; then
+        #DIFFICULTY, GAMEMODE, PERMISSION 
 	    sh /minecraft/resources/pre-BE-BDS.sh
 
     elif [ "${SRVTYPE}" -eq  "cuberite" ]; then

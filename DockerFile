@@ -28,6 +28,7 @@ ADD ./resources/*  /minecraft/resources/
 EXPOSE 21/tcp
 ##Minecraft
 EXPOSE 19132/udp
+EXPOSE 19132/tcp
 ##Cuberite Admin
 EXPOSE 80/tcp
 
