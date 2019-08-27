@@ -8,18 +8,18 @@ fi
 #############
 #InitProcess#
 #############
-if [ -e /minecraft/bin/initialstart ]; then # aaa,txtはあるか？
+if [[ -e /minecraft/bin/initialstart ]]; then # aaa,txtはあるか？
 	echo "Initial Start..." >&1
 	#-----------#
 	#FTP prepare#
 	#-----------#
 	if [[ -z "${SRVID}" ]]; then
-	echo "SRVID is not setted"
-	exit 1
+	    echo "SRVID is not setted"
+	    exit 1
     fi
     if [[ -z "${PASSWD}" ]]; then
-	echo "PASSWD is not setted"
-	exit 1
+	    echo "PASSWD is not setted"
+	    exit 1
     fi
 
 	sh pre-FTP.sh

@@ -1,8 +1,8 @@
 #!/bin/sh
 WDIR=/minecraft/resources
-tar zxvf $WDIR/cuberite*.tar.gz
-mv $WDIR/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
-mv $WDIR/resources/cuberite_src/* /minecraft/server/
+tar zxvf ${WDIR}/cuberite*.tar.gz
+mv ${WDIR}/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
+mv ${WDIR}/resources/cuberite_src/* /minecraft/server/
 
 #config
 mv /minecraft/server/webadmin.ini.def /minecraft/server/webadmin.ini

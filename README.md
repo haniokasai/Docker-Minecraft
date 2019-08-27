@@ -18,8 +18,6 @@ docker create --name=コンテナ名 \
 - /minecraft/resources/PHP*.tar.gz
 
 #TODO
-
-- rsync でプラグイン読み込み
 - configの設定
 - IP制限
 - FTPのオンオフ

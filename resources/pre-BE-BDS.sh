@@ -1,8 +1,8 @@
 #!/bin/sh
 WDIR=/minecraft/resources
-mkdir $WDIR/bds
+mkdir ${WDIR}/bds
 #config
-mv $WDIR/resources/server.properties.bds /minecraft/server/server.properties
+mv ${WDIR}/resources/server.properties.bds /minecraft/server/server.properties
 
 
 if [[ -z "${DIFFICULTY}" ]]; then
