@@ -10,17 +10,17 @@ docker create --name=コンテナ名 \
 	-itd haniokasai/Docker-Minecraft
 ```
 
-#File 構成
+# File 構成
 - /minecraft/resources/bds.zip
 - /minecraft/resources/cuberite*.tar.gz
 - /minecraft/resources/PHP*.tar.gz
 - /minecraft/resources/defaultplugins*.tar.gz
 - /minecraft/server/pmmp.phar
 
-#FTPのオンオフ
+# FTPのオンオフ
 - /minecraft/bin/nonftp
 
-#TODO
+# TODO
 - configの設定
 - IP制限
  
