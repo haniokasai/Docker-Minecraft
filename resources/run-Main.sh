@@ -32,7 +32,7 @@ if [ -e /minecraft/bin/initialstart ]; then # aaa,txtはあるか？
 	    sh /minecraft/resources/pre-BE-PMMP.sh
 
     elif [ "${SRVTYPE}" -eq  "beof" ]; then
-        #DIFFICULTY, GAMEMODE, PERMISSION 
+        #DIFFICULTY, GAMEMODE, PERMISSION
 	    sh /minecraft/resources/pre-BE-BDS.sh
 
     elif [ "${SRVTYPE}" -eq  "cuberite" ]; then
@@ -54,16 +54,15 @@ fi
 #############
 #Permission #
 #############
-chgrp ftpgroup /minecraft/server -R
-chmod 2111 /minecraft/resources -R
-chmod 2111 /minecraft/bin -R
-chmod 2777 /minecraft/server -R
+sh /minecraft/resources/setPerm.sh
+
 ############
 #Start FTP #
 ############
-exec /usr/sbin/pure-ftpd -l pam -l puredb:/etc/pure-ftpd/pureftpd.pdb 1000 -8 UTF-8 --noanonymous --userbandwidth --quota 10000:15 &
-echo $! > /minecraft/bin/pureftpd.pid
-
+if [ ! -e "/minecraft/bin/nonftp"  ]; then
+    exec /usr/sbin/pure-ftpd -l pam -l puredb:/etc/pure-ftpd/pureftpd.pdb 1000 -8 UTF-8 --noanonymous --userbandwidth --quota 10000:15 &
+    echo $! > /minecraft/bin/pureftpd.pid
+fi
 
 ############
 #Minecraft #

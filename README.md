@@ -12,11 +12,21 @@ docker create --name=コンテナ名 \
     -itd haniokasai/Docker-Minecraft
 ```
 
+#File 構成
+- /minecraft/resources/bds.zip
+- /minecraft/resources/cuberite*.tar.gz
+- /minecraft/resources/PHP*.tar.gz
+
 #TODO
+
 - rsync でプラグイン読み込み
 - configの設定
 - IP制限
 - FTPのオンオフ
 
-# Reference:
+# Reference
+
 [chriskte, pure-ftpd-docker](https://github.com/chriskite/pure-ftpd-docker)
+
+
+

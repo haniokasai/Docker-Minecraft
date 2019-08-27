@@ -1,6 +1,6 @@
 #!/bin/sh
 WDIR=/minecraft/resources
-tar zxvf $WDIR/cuberite20190826.tgz
+tar zxvf $WDIR/cuberite*.tar.gz
 mv $WDIR/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
 mv $WDIR/resources/cuberite_src/* /minecraft/server/
 
