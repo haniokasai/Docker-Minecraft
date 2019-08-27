@@ -3,8 +3,8 @@ echo "pre process...." >&1
 
 WDIR=/minecraft/resources
 tar zxvf ${WDIR}/cuberite*.tar.gz
-mv ${WDIR}/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
-mv ${WDIR}/resources/cuberite_src/* /minecraft/server/
+mv ${WDIR}/cuberite_binfile /minecraft/bin/cuberite_binfile
+mv ${WDIR}/cuberite_src/* /minecraft/server/
 
 #config
 cd /minecraft/server

@@ -24,11 +24,12 @@ elif [ -e ${PHARFILE}  ]; then
 	echo "Phar founded!" >&1
 else
 	echo "Phar not found." >&2
+	ls /minecraft/server
 	exit 1
 fi
 
 
-/minecraft/bin/php7/bin/php \
+/minecraft/bin/bin/php7/bin/php \
 	-n \
 	-d "open_basedir=/tmp:phar://:/minecraft/server" \
 	-d "disable_functions=" \
