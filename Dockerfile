@@ -21,7 +21,8 @@ RUN mkdir /minecraft/defaultplugins
 RUN touch /minecraft/initialstart
 RUN touch /minecraft/buildnow
 #Copy
-ADD ./resources/*  /minecraft/resources/
+COPY ./resources/*  /minecraft/resources/
+#ADD ./resources/*  /minecraft/resources/
 
 #PORT
 ##FTP
