@@ -20,11 +20,8 @@ RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/defaultplugins
 ##Initial flag
 RUN touch /minecraft/bin/initialstart
-
-#Copy& extract Bin
+#Copy
 ADD ./resources/*  /minecraft/resources/
-WORKDIR /minecraft/resources
-
 
 #PORT
 ##FTP
