@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # RUN: when image is being built
 RUN echo "BUILDING PROCESS"
 RUN apt update
-RUN apt install bash pure-ftpd wget curl git zip
+RUN apt install bash pure-ftpd wget curl git zip -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
