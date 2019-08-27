@@ -32,4 +32,4 @@ echo "server-ip=${SRVDOMAIN}" > CONFIGFILE
 echo "language=jpn" > CONFIGFILE
 
 #plugin
-rsync -av  --include="*/" --include="*.phar" --exclude="*" /minecraft/defaultplugins/ /minecraft/server/plugins --delete
+sh /minecraft/resources/pluginSync.sh

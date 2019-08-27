@@ -5,7 +5,7 @@ sleep 1
 PHARFILE = "/minecraft/resources/pmmp.phar"
 
 if [[ -e "/minecraft/bin/nonftp"  ]]; then
-	rsync -av  --include="*/" --include="*.phar" --exclude="*" /minecraft/defaultplugins/ /minecraft/server/plugins --delete
+	sh /minecraft/resources/pluginSync.sh
 else
 	echo "PMMP plugins are not synced..." >&1
 fi
