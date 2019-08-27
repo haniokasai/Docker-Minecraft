@@ -7,6 +7,7 @@ mv ${WDIR}/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
 mv ${WDIR}/resources/cuberite_src/* /minecraft/server/
 
 #config
+cd /minecraft/server
 mv /minecraft/server/webadmin.ini.def /minecraft/server/webadmin.ini
 sed -i -e "s/=v=Ports=v=/8080/g" settings.ini
 sed -i -e "s/=v=srvid=v=/${SRVID}/g" settings.ini

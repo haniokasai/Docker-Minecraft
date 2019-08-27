@@ -9,6 +9,7 @@ fi
 #############
 #InitProcess#
 #############
+ls /minecraft/resources
 if [ -e /minecraft/bin/buildnow ]; then # aaa,txtはあるか？
 	echo "This is first build" >&1
 	exit 0

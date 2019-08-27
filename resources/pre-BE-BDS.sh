@@ -5,6 +5,7 @@ WDIR=/minecraft/resources
 mkdir ${WDIR}/bds
 #config
 mv ${WDIR}/resources/server.properties.bds /minecraft/server/server.properties
+cd /minecraft/server
 
 
 if [ -z "${DIFFICULTY}" ]; then
