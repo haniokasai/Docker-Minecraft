@@ -3,7 +3,8 @@
 echo "Prepare ftp...." >&1
 
 groupadd ftpgroup && \
-useradd -g ftpgroup -d /dev/null -s /etc ftpuser  
+adduser --disabled-login --disabled-password --no-create-home --shell /dev/null ftpuser ftpgroup
+
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。
 echo "${SRVID}:${PASSWD}" > passwdlist
 pure-pw useradd ${SRVID} -u ftpuser -d /minecraft/server

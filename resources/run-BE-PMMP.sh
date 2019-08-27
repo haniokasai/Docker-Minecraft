@@ -12,7 +12,7 @@ fi
 	
 if [ -e ${PHARFILE} ]; then
 	echo "Phar founded!" >&1
-	RESULT=$(/minecraft/bin/php7/bin/php /minecraft/resources/pharvalid.php PHARFILE)
+	RESULT=$(/minecraft/bin/bin/php7/bin/php /minecraft/resources/pharvalid.php PHARFILE)
 	echo ${RESULT}
 	if  [ "`echo ${RESULT} | grep hash`" ]; then
 		echo "Phar is valid!" >&1
