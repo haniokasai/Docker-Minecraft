@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "pre process...." >&1
+
 WDIR=/minecraft/resources
 mkdir ${WDIR}/bds
 #config
@@ -42,3 +44,5 @@ sed -i -e "s/=v=srvid=v=/${SRVID}/g" server.properties
 sed -i -e "s/=v=difficulty=v=/${DIFFICULTY}/g" server.properties
 sed -i -e "s/=v=gamemode=v=/${GAMEMODE}/g" server.properties
 sed -i -e "s/=v=permission=v=/${PERMISSION}/g" server.properties
+
+echo "pre process....done" >&1

@@ -18,7 +18,8 @@ RUN mkdir /minecraft/server
 RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/defaultplugins
 ##Initial flag
-RUN touch /minecraft/bin/initialstart
+RUN touch /minecraft/initialstart
+RUN touch /minecraft/buildnow
 #Copy
 ADD ./resources/*  /minecraft/resources/
 

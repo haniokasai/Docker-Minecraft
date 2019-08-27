@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "pre process...." >&1
 tar zxvf /minecraft/resources/PHP-7.3-Linux-x86_64.tar.gz /minecraft/bin
 mkdir -p /minecraft/server/plugins
 CONFIGFILE = /minecraft/server/server.properties
@@ -33,3 +34,4 @@ echo "language=jpn" > CONFIGFILE
 
 #plugin
 sh /minecraft/resources/pluginSync.sh
+echo "pre process....done" >&1

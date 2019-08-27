@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "pre process...." >&1
+
 WDIR=/minecraft/resources
 tar zxvf ${WDIR}/cuberite*.tar.gz
 mv ${WDIR}/resources/cuberite_binfile /minecraft/bin/cuberite_binfile
@@ -15,3 +17,4 @@ sed -i -e "s/=v=Description=v=/${SRVID} [MiRm-Cuberite]/g" settings.ini
 sed -i -e "s/=v=MaxPlayers=v=/30/g" settings.ini
 sed -i -e "s/=v=Ports=v=/19132/g" settings.ini
 
+echo "pre process....done" >&1
