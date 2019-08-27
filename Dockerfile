@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # RUN: when image is being built
 RUN echo "BUILDING PROCESS"
 RUN apt update
-RUN apt install pure-ftpd zip rsync libzip5 curl -y
+RUN apt install pure-ftpd zip rsync libzip4 curl -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
