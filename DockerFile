@@ -18,21 +18,12 @@ RUN mkdir /minecraft/server
 ##These dirs are for PM-MP there should be mounted.
 RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/defaultplugins
+##Initial flag
+RUN touch /minecraft/bin/initialstart
 
 #Copy& extract Bin
 ADD ./resources/*  /minecraft/resources/
 WORKDIR /minecraft/resources
-
-###Pre系は今じゃ間に合わない、初回起動時に。
-#FTP prepare
-RUN sh pre-FTP.sh
-
-#BDS and Cuberite and ...
-RUN sh pre-BE-PMMP.sh
-RUN sh pre-BE-BDS.sh
-RUN sh pre-BE-Cuberite.sh
-#RUN sh pre-Java-Minecraft.sh
-#RUN sh pre-Java-Spigot.sh
 
 
 #PORT

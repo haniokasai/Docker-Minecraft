@@ -6,17 +6,6 @@ CONFIGFILE = /minecraft/server/server.properties
 echo "motd=${SRVID} [MiRmPE]" > CONFIGFILE
 echo "server-port=19132" > CONFIGFILE
 echo "level-type=${WORLDTYPE}" > CONFIGFILE
-
-if [[ ${GAMEMODE} = "creative" ]];then
-    GAMEMODE = 1
-else
-    GAMEMODE = 0
-fi
 echo "gamemode=${GAMEMODE}" > CONFIGFILE
-
-if [[ -z "${SRVDOMAIN}" ]]; then
-	SRVDOMAIN = "0.0.0.0"
-fi
-
 echo "server-ip=${SRVDOMAIN}" > CONFIGFILE
 echo "language=jpn" > CONFIGFILE
