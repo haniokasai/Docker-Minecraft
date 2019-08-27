@@ -2,7 +2,7 @@
 
 echo "Starting PMMP..." >&1
 sleep 1
-PHARFILE="/minecraft/resources/pmmp.phar"
+PHARFILE="/minecraft/server/pmmp.phar"
 
 if [ -e "/minecraft/nonftp" ]; then
 	sh /minecraft/resources/pluginSync.sh
