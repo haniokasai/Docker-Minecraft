@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "pre process...." >&1
-mv /minecraft/resources/PHP*.tar.gz /minecraft/bin/
-tar zxvf /minecraft/bin/PHP*.tar.gz
+mv /minecraft/resources/PHP*.tar.gz /minecraft/bin/PHP.tar.gz
+tar zxvf /minecraft/bin/PHP.tar.gz
 mkdir -p /minecraft/server/plugins
 CONFIGFILE=/minecraft/server/server.properties
 mv /minecraft/resources/pmmp_*.phar /minecraft/server/pmmp.phar
