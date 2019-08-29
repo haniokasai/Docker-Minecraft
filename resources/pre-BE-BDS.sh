@@ -30,12 +30,13 @@ else
 	GAMEMODE="survival"
 fi
 
- if [ -z "${PERMISSION}" ]; then
+if [ -z "${PERMISSION}" ]; then
 	DIFFICULTY="operator"
 fi
-if [ ${PERMISSION} = "visitor" ];then
+
+if [ "${PERMISSION}" = "visitor" ]; then
 	DIFFICULTY="visitor"
-elif [ ${PERMISSION} = "member" ];then
+elif [ "${PERMISSION}" = "member" ]; then
 	DIFFICULTY="member"
 else
 	DIFFICULTY="operator"
