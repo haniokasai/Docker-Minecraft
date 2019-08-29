@@ -10,9 +10,9 @@ mv ${WDIR}/cuberite_src/* /minecraft/server/
 #config
 cd /minecraft/server
 mv /minecraft/server/webadmin.ini.def /minecraft/server/webadmin.ini
-sed -i -e "s/=v=Ports=v=/8080/g" settings.ini
-sed -i -e "s/=v=srvid=v=/${SRVID}/g" settings.ini
-sed -i -e "s/=v=Password=v=/${PASSWD}/g" settings.ini
+sed -i -e "s/=v=Ports=v=/8080/g" webadmin.ini
+sed -i -e "s/=v=srvid=v=/${SRVID}/g" webadmin.ini
+sed -i -e "s/=v=Password=v=/${PASSWD}/g" webadmin.ini
 
 mv /minecraft/server/settings.ini.def /minecraft/server/settings.ini
 sed -i -e "s/=v=Description=v=/${SRVID} [MiRm-Cuberite]/g" settings.ini
