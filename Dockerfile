@@ -20,9 +20,6 @@ RUN mkdir /minecraft/defaultplugins
 ##Initial flag
 RUN touch /minecraft/initialstart
 RUN touch /minecraft/buildnow
-#Copy
-COPY ./resources/*  /minecraft/resources/
-#ADD ./resources/*  /minecraft/resources/
 
 #PORT
 ##FTP
@@ -33,6 +30,12 @@ EXPOSE 19132/tcp
 ##Cuberite Admin
 EXPOSE 80/tcp
 
+#Copy
+COPY ./resources/*  /minecraft/resources/
+#ADD ./resources/*  /minecraft/resources/
+
+#RUN 
+RUN apt install libssl-dev -y
 
 #Minecraft and FTP
 WORKDIR /minecraft/server
