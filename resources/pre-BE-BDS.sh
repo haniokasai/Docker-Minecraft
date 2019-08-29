@@ -2,7 +2,7 @@
 echo "pre process...." >&1
 
 WDIR=/minecraft/resources
-mkdir ${WDIR}/bds
+mkdir -p ${WDIR}/bds
 #config
 mv ${WDIR}/server.properties.bds /minecraft/server/server.properties
 cd /minecraft/server
