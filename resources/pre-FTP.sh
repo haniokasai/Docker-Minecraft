@@ -8,9 +8,9 @@ adduser ftpuser --gecos ""  --shell /bin/false --home /minecraft/server --no-cre
 usermod ftpuser -G ftpgroup
 
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。
-
+cd /tmp
 echo "${SRVID}:${PASSWD}" > passwdlist
-pure-pw useradd ${SRVID} -u ftpuser -d /minecraft/server
+pure-pw useradd ${SRVID} -f passwdlist -u ftpuser -d /minecraft/server
 
 pure-pw mkdb && \
 ln -s /etc/pure-ftpd/pureftpd.passwd /etc/pureftpd.passwd && \
