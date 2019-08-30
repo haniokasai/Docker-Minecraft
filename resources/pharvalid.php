@@ -8,7 +8,7 @@
 // php pharvalid.php phar名　でレスポンス。
 for(;;) {
 
-	$filename = "/minecraft/server/pmmp.phar;
+	$filename = "/minecraft/server/pmmp.phar";
 	if (!isset($filename)) {
 		echo "Eneedarg";
 		break;
