@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # RUN: when image is being built
 RUN echo "BUILDING PROCESS"
 RUN apt update
-RUN apt install pure-ftpd zip rsync wget curl unzip libzip5 libyaml-dev -y
+RUN apt install pure-ftpd zip rsync unzip -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
@@ -33,9 +33,6 @@ EXPOSE 80/tcp
 #Copy
 COPY ./resources/*  /minecraft/resources/
 #ADD ./resources/*  /minecraft/resources/
-
-#RUN 
-RUN apt install libssl-dev -y
 
 #Minecraft and FTP
 WORKDIR /minecraft/server

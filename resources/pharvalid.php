@@ -8,7 +8,7 @@
 // php pharvalid.php phar名　でレスポンス。
 for(;;) {
 
-	$filename = $argv[1];
+	$filename = "/minecraft/server/pmmp.phar;
 	if (!isset($filename)) {
 		echo "Eneedarg";
 		break;
@@ -25,7 +25,7 @@ for(;;) {
 	}
 
 	try {
-		$p = new Phar($filename, 0, "mochikomi.phar");
+		$p = new Phar($filename, 0, "pmmp.phar");
 		$hash = $p->getSignature()["hash"];
 		echo "##hash##".$p->getSignature()["hash"]."##hash##";
 		break;
