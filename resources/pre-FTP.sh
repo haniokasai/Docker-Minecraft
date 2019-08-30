@@ -2,8 +2,6 @@
 
 echo "Prepare ftp...." >&1
 
-groupadd ftpgroup && \
-adduser --disabled-login --disabled-password --no-create-home --shell /dev/null ftpuser ftpgroup
 
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。
 echo "${SRVID}:${PASSWD}" > passwdlist
