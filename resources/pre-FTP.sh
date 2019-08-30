@@ -3,18 +3,12 @@
 echo "Prepare ftp...." >&1
 
 
-groupadd ftpgroup &&\
-	
-#https://qiita.com/dogyear/items/e58ddab9a49bf82ed43f
-expect -c "
-spawn useradd -g ftpgroup -d /minecraft/server -s /dev/null ftpuser
-expect \"Password:\"
-send -- \"aaaa\n\"
-expect \"Enter it again:\"
-send -- \"aaaa\n\"
-"
+groupadd ftpgroup
+adduser -g ftpgroup --shell /bin/false -d /minecraft/server -D --disabled-password ftpuser
+
 
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。
+
 echo "${SRVID}:${PASSWD}" > passwdlist
 pure-pw useradd ${SRVID} -u ftpuser -d /minecraft/server
 
