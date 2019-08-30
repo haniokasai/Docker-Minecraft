@@ -4,7 +4,7 @@ echo "Prepare ftp...." >&1
 
 
 groupadd ftpgroup
-adduser -g ftpgroup --shell /bin/false -d /minecraft/server -D --disabled-password ftpuser
+adduser --group ftpgroup --shell /bin/false --home /minecraft/server --no-create-home --disabled-password ftpuser
 
 
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。

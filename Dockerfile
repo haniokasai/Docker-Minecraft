@@ -29,12 +29,12 @@ EXPOSE 19132/udp
 EXPOSE 19132/tcp
 ##Cuberite Admin
 EXPOSE 80/tcp
+#RUN apt install expect -y
 
 #Copy
 COPY ./resources/*  /minecraft/resources/
 #ADD ./resources/*  /minecraft/resources/
 
-RUN apt install expect -y
 #Minecraft and FTP
 WORKDIR /minecraft/server
 CMD sh /minecraft/resources/run-Main.sh
