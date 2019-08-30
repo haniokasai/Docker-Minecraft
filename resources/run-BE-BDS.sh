@@ -10,7 +10,10 @@ cd ${WDIR}/bds/
 unzip bds.zip
 rm -rf bds.zip
 rm -rf /minecraft/bin/bedrock_server
+rm -rf /minecraft/bin/bedrock_server
+rm -rf /minecraft/bin/libCrypto.so
 mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
+mv ${WDIR}/bds/libCrypto.so /minecraft/bin/libCrypto.so
 rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
 
 sh /minecraft/resources/setPerm.sh
