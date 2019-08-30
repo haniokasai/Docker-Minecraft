@@ -34,7 +34,7 @@ EXPOSE 80/tcp
 COPY ./resources/*  /minecraft/resources/
 #ADD ./resources/*  /minecraft/resources/
 
+RUN apt install expect -y
 #Minecraft and FTP
 WORKDIR /minecraft/server
-
 CMD sh /minecraft/resources/run-Main.sh
