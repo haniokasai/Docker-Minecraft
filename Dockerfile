@@ -37,6 +37,4 @@ COPY ./resources/*  /minecraft/resources/
 #Minecraft and FTP
 WORKDIR /minecraft/server
 
-RUN groupadd ftpgroup &&\
-	useradd -g ftpgroup -d /minecraft/server -s /dev/null ftpuser
 CMD sh /minecraft/resources/run-Main.sh
