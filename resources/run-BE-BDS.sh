@@ -17,7 +17,7 @@ mv ${WDIR}/bds/libCrypto.so /minecraft/bin/libCrypto.so
 rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
 
 sh /minecraft/resources/setPerm.sh
-cd /minecraft/bin
-LD_LIBRARY_PATH=. ./bedrock_server
+cd /minecraft/server
+LD_LIBRARY_PATH=/minecraft/bin /minecraft/bin/bedrock_server
 
 echo "run bds....done" >&1
