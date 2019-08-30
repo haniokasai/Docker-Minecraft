@@ -6,6 +6,7 @@ tar zxvf /minecraft/bin/PHP.tar.gz
 mkdir -p /minecraft/server/plugins
 CONFIGFILE=/minecraft/server/server.properties
 mv /minecraft/resources/pmmp_*.phar /minecraft/server/pmmp.phar
+cp /minecraft/bin/bin/php7/lib/* /usr/lib/
 
 #env
 if [ -z "${WORLDTYPE}" ]; then
