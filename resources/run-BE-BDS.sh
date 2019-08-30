@@ -14,6 +14,7 @@ mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
 rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
 
 sh /minecraft/resources/setPerm.sh
-/minecraft/bin/bedrock_server
+cd /minecraft/bin
+LD_LIBRARY_PATH=. ./bedrock_server
 
 echo "run bds....done" >&1
