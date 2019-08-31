@@ -11,7 +11,7 @@ docker create --name=コンテナ名 \
 ```
 
 ```bash
-docker create --name=new --network=none --storage-opt size=0.5g -p 20001:19132 -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -it haniokasai/docker-minecraft　(
+docker create --name=new --storage-opt size=0.5g -p 20001:19132/udp -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -it haniokasai/docker-minecraft　(
 ```
 
 ```bash
