@@ -24,6 +24,7 @@ RUN touch /minecraft/buildnow
 ##FTP
 EXPOSE 21/tcp
 EXPOSE 1024/tcp
+EXPOSE 1025/tcp
 
 ##Minecraft
 EXPOSE 19132/udp
