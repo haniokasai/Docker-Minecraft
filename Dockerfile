@@ -23,6 +23,8 @@ RUN touch /minecraft/buildnow
 #PORT
 ##FTP
 EXPOSE 21/tcp
+EXPOSE 20/tcp
+
 ##Minecraft
 EXPOSE 19132/udp
 EXPOSE 25565/tcp
