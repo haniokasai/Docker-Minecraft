@@ -5,9 +5,8 @@ MAINTAINER haniokasai <htek@haniokasai.com>
 ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
-RUN echo "BUILDING PROCESS"
 RUN apt update
-RUN apt install pure-ftpd zip rsync unzip -y
+RUN apt install zip rsync unzip expect -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
@@ -33,13 +32,8 @@ EXPOSE 80/tcp
 
 #Copy
 COPY ./resources/*  /minecraft/resources/
-#ADD ./resources/*  /minecraft/resources/
 
-
-RUN apt --force-yes install dpkg-dev debhelper expect
-
-# install dependancies
-RUN apt-get -y build-dep pure-ftpd
+RUN apt --force-yes install dpkg-dev debhelper build-dep
 
 # build from source https://github.com/chriskite/pure-ftpd-docker/blob/master/Dockerfile
 RUN mkdir /tmp/pure-ftpd/ && \
