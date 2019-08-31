@@ -7,13 +7,15 @@ groupadd ftpgroup
 adduser ftpuser --gecos ""  --shell /bin/false --home /minecraft/server --no-create-home --disabled-password
 usermod ftpuser -G ftpgroup
 
+cd /etc/pure-ftpd/conf
+
 #タイミング悪くね！作成時にパスワードじゃ間に合わん。
 cd /tmp
 #echo "${SRVID}:${PASSWD}" > passwdlist
 #pure-pw useradd ${SRVID} -f passwdlist -u ftpuser -d /minecraft/server
 #https://github.com/nexeck/docker-pure-ftpd/blob/30a982aea4e9fb6b5fba6776fceccb15cb39bd04/docker-entrypoint.sh
 expect -c "
-  spawn pure-pw useradd ${SRVID} -u ftpv -d ${FTP_DIR}/data
+  spawn pure-pw useradd ${SRVID} -u ftpuser -g ftpgroup -d ${FTP_DIR}/data
   expect {
     Password {
       send \"${PASSWD}\r\"
