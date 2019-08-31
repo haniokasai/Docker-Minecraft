@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
 RUN apt update
-RUN apt install zip rsync unzip expect -y
+RUN apt install zip rsync unzip expect proftpd perl-y
 
 #Make necessary dirs
 RUN mkdir /minecraft
@@ -29,25 +29,8 @@ EXPOSE 25565/tcp
 ##Cuberite Admin
 EXPOSE 80/tcp
 
-
 #Copy
 COPY ./resources/*  /minecraft/resources/
-
-RUN apt --force-yes install dpkg-dev debhelper build-dep
-
-# build from source https://github.com/chriskite/pure-ftpd-docker/blob/master/Dockerfile
-RUN mkdir /tmp/pure-ftpd/ && \
-	cd /tmp/pure-ftpd/ && \
-	apt-get source pure-ftpd && \
-	cd pure-ftpd-* && \
-	sed -i '/^optflags=/ s/$/ --without-capabilities/g' ./debian/rules && \
-	dpkg-buildpackage -b -uc
-RUN apt-mark hold pure-ftpd pure-ftpd-common
-
-# install the new deb files
-RUN dpkg -i /tmp/pure-ftpd/pure-ftpd-common*.deb
-RUN apt-get -y install openbsd-inetd
-RUN dpkg -i /tmp/pure-ftpd/pure-ftpd_*.deb
 
 #Minecraft and FTP
 WORKDIR /minecraft/server
