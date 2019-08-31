@@ -26,7 +26,7 @@ RUN touch /minecraft/buildnow
 EXPOSE 21/tcp
 ##Minecraft
 EXPOSE 19132/udp
-EXPOSE 19132/tcp
+EXPOSE 25565/tcp
 ##Cuberite Admin
 EXPOSE 80/tcp
 RUN apt install expect -y
