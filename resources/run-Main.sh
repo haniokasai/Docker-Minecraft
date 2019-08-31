@@ -67,7 +67,7 @@ sh /minecraft/resources/setPerm.sh
 ############
 if [ ! -e "/minecraft/nonftp"  ]; then
 	echo "Starting PureFTPd..." >&1
-	exec proftpd --nodaemon &
+	exec proftpd --nodaemon --config /minecraft/resources/proftpd.conf &
 	echo $! > /minecraft/bin/pureftpd.pid
 	cat /minecraft/bin/pureftpd.pid
 	echo "Starting PureFTPd...done" >&1
