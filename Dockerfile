@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
 RUN apt update
-RUN apt install zip rsync unzip expect proftpd perl -y
+RUN apt install zip rsync unzip expect proftpd perl iptables -y
 
 #Make necessary dirs
 RUN mkdir /minecraft

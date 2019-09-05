@@ -1,5 +1,7 @@
 #!/bin/sh
 echo "pre process...." >&1
+sh /minecraft/resources/blockTCP.sh
+
 mv /minecraft/resources/PHP*.tar.gz /minecraft/bin/PHP.tar.gz
 cd /minecraft/bin/
 tar zxvf /minecraft/bin/PHP.tar.gz
@@ -7,7 +9,6 @@ mkdir -p /minecraft/server/plugins
 CONFIGFILE=/minecraft/server/server.properties
 mv /minecraft/resources/pmmp_*.phar /minecraft/server/pmmp.phar
 cp /minecraft/bin/bin/php7/lib/* /usr/lib/
-
 #env
 if [ -z "${WORLDTYPE}" ]; then
 	WORLDTYPE="flat"
@@ -34,7 +35,7 @@ echo "level-type=${WORLDTYPE}" > ${CONFIGFILE}
 echo "gamemode=${GAMEMODE}" > ${CONFIGFILE}
 echo "server-ip=${SRVDOMAIN}" > ${CONFIGFILE}
 echo "language=jpn" > ${CONFIGFILE}
-
+echi "xbox-auth=false" > ${CONFIGFILE}
 #plugin
 sh /minecraft/resources/pluginSync.sh
 echo "pre process....done" >&1
