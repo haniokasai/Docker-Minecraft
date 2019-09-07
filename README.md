@@ -25,6 +25,13 @@ docker build . -t haniokasai/docker-minecraft
 
 ```
 
+# Sysinstall
+
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
 # 奇妙な設計問題
 
 ## １．/minecraft/bin/nonftp
@@ -60,7 +67,7 @@ docker cp ホスト/それ　コンテナ/それ<br>
 - /minecraft/resources/PHP*.tar.gz
 - /minecraft/resources/defaultplugins*.tar.gz
 ## ユーザー領域
-- /minecraft/server/
+- /minecraft/server/ サーバーデータ、FTPアクセス可能
 
 ## 識別子
 - /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない
@@ -69,12 +76,3 @@ docker cp ホスト/それ　コンテナ/それ<br>
 # Reference
 
 [chriskte, pure-ftpd-docker](https://github.com/chriskite/pure-ftpd-docker)
-
-
-
-# Sysinstall
-
-```
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-```
