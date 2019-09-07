@@ -1,6 +1,10 @@
 # Docker-Minecraft
 Docker for Minecraft
 
+# TODO
+- IP制限
+- SFTP
+
 ```bash
 docker create --name=コンテナ名 \
 	--storage-opt size=0.5g --memory 100M --cpus 0.3 --cap-add=NET_ADMIN \
@@ -15,18 +19,11 @@ docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19
 ```
 
 ```bash
+chmod +x getFiles.sh
+sh getFiles.sh
 docker build . -t haniokasai/docker-minecraft
 
 ```
-# File 構成(置き換え)
-- /minecraft/resources/bds.zip
-- /minecraft/resources/cuberite*.tar.gz
-- /minecraft/resources/PHP*.tar.gz
-- /minecraft/resources/defaultplugins*.tar.gz
-- /minecraft/server/pmmp.phar
-
-# FTPのオンオフ
-- /minecraft/bin/nonftp
 
 # 奇妙な設計問題
 
@@ -50,10 +47,25 @@ docker execで rm -rf それ<br>
 docker cp ホスト/それ　コンテナ/それ<br>
 で設置します。圧縮ファイル内のフォルダ構造は維持されないといけません。
 
-# TODO
-- IP制限
- 
 
+
+# ファイル構造
+## 非ユーザー領域
+- /minecraft/  当イメージ的にはroot
+- /minecraft/bin/ バイナリ置き場
+- /minecraft/defaultplugins/ デフォルトプラグインを並べる。PMMP起動時、rsyncでコピられる
+- /minecraft/resources/  リソースの置き場。ビルド時にホストとの媒介のため。
+- /minecraft/resources/bds.zip
+- /minecraft/resources/cuberite*.tar.gz
+- /minecraft/resources/PHP*.tar.gz
+- /minecraft/resources/defaultplugins*.tar.gz
+## ユーザー領域
+- /minecraft/server/
+
+## 識別子
+- /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない
+- /minecraft/initialstart  初回起動時に削除されるフラグ、あるとrun-Mainで初期化を実施する
+- /minecraft/nonftp FTPのオフ とオンフラグ　あるとPMMPプラグインがsyncされる
 # Reference
 
 [chriskte, pure-ftpd-docker](https://github.com/chriskite/pure-ftpd-docker)
