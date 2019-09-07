@@ -10,8 +10,9 @@ fi
 #InitProcess#
 #############
 ls /minecraft/resources
-if [ -e /minecraft/bin/buildnow ]; then # aaa,txtはあるか？
+if [ -e /minecraft/buildnow ]; then # aaa,txtはあるか？
 	echo "This is first build" >&1
+	rm -rf /minecraft/buildnow
 	exit 0
 fi
 if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
@@ -63,6 +64,7 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 		echo 'Invalid SRVTYPE!' >&2
 		ER="true"
 	fi
+	rm -rf /minecraft/initialstart
 	echo "Initial Start...done" >&1
 fi
 
