@@ -28,6 +28,28 @@ docker build . -t haniokasai/docker-minecraft
 # FTPのオンオフ
 - /minecraft/bin/nonftp
 
+# 奇妙な設計問題
+
+## １．/minecraft/bin/nonftp
+このファイルの有無でftpのon/off　が決まります <br>
+- FTPのオフ
+	docker exec で touch /minecraft/bin/nonftp <br>
+- FTPのオン
+	docker exec で rm -rf /minecraft/bin/nonftp <br>
+
+## 2 更新を要求されるファイルたち
+Dockerのイメージはインターネットからファイルを取得できません<br>
+ホストがコンテナ内にファイルをコピーしてやる必要があります。<br>
+- /minecraft/resources/bds.zip
+- /minecraft/resources/cuberite*.tar.gz
+- /minecraft/resources/PHP*.tar.gz
+- /minecraft/resources/defaultplugins*.tar.gz
+- /minecraft/server/pmmp.phar
+これらのファイルは<br>
+docker execで rm -rf それ<br>
+docker cp ホスト/それ　コンテナ/それ<br>
+で設置します。圧縮ファイル内のフォルダ構造は維持されないといけません。
+
 # TODO
 - IP制限
  
