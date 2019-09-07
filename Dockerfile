@@ -14,7 +14,6 @@ RUN mkdir /minecraft/resources
 RUN mkdir /minecraft/bin
 RUN mkdir /minecraft/server
 ##These dirs are for PM-MP there should be mounted.
-RUN mkdir /minecraft/multiphar
 RUN mkdir /minecraft/defaultplugins
 ##Initial flag
 RUN touch /minecraft/initialstart
