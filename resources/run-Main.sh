@@ -53,10 +53,10 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 		sh /minecraft/resources/pre-BE-BDS.sh
 	elif [ "${SRVTYPE}" =  "cuberite" ]; then
 		echo "Preparation cuberite has been selected." >&1
-		sh /minecraft/resources/pre-BE-Cuberite.sh
+		sh /minecraft/resources/pre-PC-Cuberite.sh
 	elif [ "${SRVTYPE}" =  "mcpc" ]; then
 		echo "NOT implement Preparation mcpc has been selected." >&1
-		sh /minecraft/resources/pre-MCPC.sh
+		sh  /minecraft/resources/pre-PC-vanilla.sh
 	elif [ "${SRVTYPE}" =  "spigot" ]; then
 		echo "NOT implement Preparation spigot has been selected." >&1
 		sh /minecraft/resources/pre-SPIG.sh
@@ -98,7 +98,7 @@ elif [ "${SRVTYPE}" =  "beof" ]; then
 	sh /minecraft/resources/run-BE-BDS.sh
 elif [ "${SRVTYPE}" = "cuberite" ]; then
 	echo "Starter cuberite has been selected." >&1
-	sh /minecraft/resources/run-BE-Cuberite.sh
+	sh /minecraft/resources/run-PC-Cuberite.sh
 elif [ "${SRVTYPE}" =  "mcpc" ]; then
 	echo "Starter mcpc has been selected." >&1
 	sh /minecraft/resources/run-MCPC.sh
