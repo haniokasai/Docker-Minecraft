@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 #apt srv https://qiita.com/fkshom/items/53de3a9b9278cd524099
 RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
-RUN apt install zip rsync unzip expect proftpd perl iptables openssh-server -y
+RUN apt install zip rsync unzip expect perl iptables openssh-server -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
@@ -18,8 +18,8 @@ RUN mkdir /minecraft/server
 ##These dirs are for PM-MP there should be mounted.
 RUN mkdir /minecraft/defaultplugins
 ##Initial flag
-#RUN touch /minecraft/initialstart
-RUN touch /minecraft/buildnow
+RUN touch /minecraft/initialstart
+#RUN touch /minecraft/buildnow
 
 #PORT
 ##SFTP
