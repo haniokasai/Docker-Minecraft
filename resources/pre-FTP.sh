@@ -17,6 +17,8 @@ echo "AllowTcpForwarding no" >> ${SSHDFILE}
 echo "ChrootDirectory /minecraft/server" >> ${SSHDFILE}
 echo "ForceCommand internal-sftp" >> ${SSHDFILE}
 
+ mkdir -p /run/sshd
+ 
 groupadd ftpgroup
 ftp_login=${SRVID}
 ftp_pass=${PASSWD}
