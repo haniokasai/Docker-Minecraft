@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
 RUN apt update
-RUN apt install zip rsync unzip expect proftpd perl iptables -y
+RUN apt install zip rsync unzip expect proftpd perl iptables openssh-server -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
@@ -20,10 +20,8 @@ RUN touch /minecraft/initialstart
 RUN touch /minecraft/buildnow
 
 #PORT
-##FTP
-EXPOSE 21/tcp
-EXPOSE 1024/tcp
-EXPOSE 1025/tcp
+##SFTP
+EXPOSE 22/tcp
 
 ##Minecraft
 EXPOSE 19132/udp

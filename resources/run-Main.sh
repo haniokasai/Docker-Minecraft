@@ -77,11 +77,11 @@ sh /minecraft/resources/setPerm.sh
 #Start FTP #
 ############
 if [ ! -e "/minecraft/nonftp"  ]; then
-	echo "Starting PureFTPd..." >&1
-	exec proftpd --nodaemon --config /minecraft/resources/proftpd.conf &
-	echo $! > /minecraft/bin/pureftpd.pid
-	cat /minecraft/bin/pureftpd.pid
-	echo "Starting PureFTPd...done" >&1
+	echo "Starting sftpd..." >&1
+	exec /usr/sbin/sshd -D -e &
+	echo $! > /minecraft/bin/sftpd.pid
+	cat /minecraft/bin/sftpd.pid
+	echo "Starting sftpd...done" >&1
 fi
 
 ############
@@ -114,11 +114,11 @@ echo "Main Server Start...done" >&1
 ##########
 #Stop FTP#
 ##########
-echo "Stopping PureFTPd..." >&1
-cat /minecraft/bin/pureftpd.pid
-kill -9 `cat /minecraft/bin/pureftpd.pid`
+echo "Stopping sftpd..." >&1
+cat /minecraft/bin/sftpd.pid
+kill -9 `cat /minecraft/bin/sftpd.pid`
 rm /minecraft/bin/*.pid
-echo "Stopping PureFTPd...done" >&1
+echo "Stopping sftpd...done" >&1
 
 if [ -z "${ER}" ]; then
 	echo "Shutdown..." >&2

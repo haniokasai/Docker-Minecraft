@@ -30,12 +30,12 @@ fi
 
 #config
 echo "motd=${SRVID} [MiRmPE]" > ${CONFIGFILE}
-echo "server-port=19132" > ${CONFIGFILE}
-echo "level-type=${WORLDTYPE}" > ${CONFIGFILE}
-echo "gamemode=${GAMEMODE}" > ${CONFIGFILE}
-echo "server-ip=${SRVDOMAIN}" > ${CONFIGFILE}
-echo "language=jpn" > ${CONFIGFILE}
-echi "xbox-auth=false" > ${CONFIGFILE}
+echo "server-port=19132" >> ${CONFIGFILE}
+echo "level-type=${WORLDTYPE}" >> ${CONFIGFILE}
+echo "gamemode=${GAMEMODE}" >> ${CONFIGFILE}
+echo "server-ip=${SRVDOMAIN}" >> ${CONFIGFILE}
+echo "language=jpn" >> ${CONFIGFILE}
+echi "xbox-auth=false" >> ${CONFIGFILE}
 #plugin
 sh /minecraft/resources/pluginSync.sh
 echo "pre process....done" >&1
