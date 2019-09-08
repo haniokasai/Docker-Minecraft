@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 #apt srv https://qiita.com/fkshom/items/53de3a9b9278cd524099
 RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
-RUN apt install zip rsync unzip expect perl iptables openssh-server -y
+#curl for libcurl4 for bds
+RUN apt install zip rsync unzip expect perl curl iptables openssh-server -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
