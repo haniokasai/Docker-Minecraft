@@ -21,15 +21,15 @@ RUN mkdir /minecraft/defaultplugins
 RUN touch /minecraft/initialstart
 #RUN touch /minecraft/buildnow
 
-#PORT
+#PORT Note: this is information for you. they are correct.
 ##SFTP
-EXPOSE 22/tcp
+#EXPOSE 22/tcp
 
 ##Minecraft
-EXPOSE 19132/udp
-EXPOSE 25565/tcp
+#EXPOSE 19132/udp
+#EXPOSE 25565/tcp
 ##Cuberite Admin
-EXPOSE 8080/tcp
+#EXPOSE 8080/tcp
 
 #Copy
 COPY ./resources/*  /minecraft/resources/
