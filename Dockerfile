@@ -5,6 +5,8 @@ MAINTAINER haniokasai <htek@haniokasai.com>
 ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
+#apt srv https://note.mu/junf/n/nc710a82cad00
+RUN sed -i.bak -e "s%http://jp.archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
 RUN apt install zip rsync unzip expect proftpd perl iptables openssh-server -y
 
@@ -16,7 +18,7 @@ RUN mkdir /minecraft/server
 ##These dirs are for PM-MP there should be mounted.
 RUN mkdir /minecraft/defaultplugins
 ##Initial flag
-RUN touch /minecraft/initialstart
+#RUN touch /minecraft/initialstart
 RUN touch /minecraft/buildnow
 
 #PORT
@@ -27,7 +29,7 @@ EXPOSE 22/tcp
 EXPOSE 19132/udp
 EXPOSE 25565/tcp
 ##Cuberite Admin
-EXPOSE 80/tcp
+EXPOSE 8080/tcp
 
 #Copy
 COPY ./resources/*  /minecraft/resources/
