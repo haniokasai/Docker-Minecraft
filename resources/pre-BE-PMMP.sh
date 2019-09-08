@@ -29,7 +29,7 @@ if [ -z "${SRVDOMAIN}" ]; then
 fi
 
 #config
-echo "motd=${SRVID} [MiRmPE]" > ${CONFIGFILE}
+echo "motd=${SRVID} [MiRm-PMMP]" > ${CONFIGFILE}
 echo "server-port=19132" >> ${CONFIGFILE}
 echo "level-type=${WORLDTYPE}" >> ${CONFIGFILE}
 echo "gamemode=${GAMEMODE}" >> ${CONFIGFILE}
