@@ -5,8 +5,8 @@ MAINTAINER haniokasai <htek@haniokasai.com>
 ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
-#apt srv https://note.mu/junf/n/nc710a82cad00
-RUN sed -i.bak -e "s%http://jp.archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
+#apt srv https://qiita.com/fkshom/items/53de3a9b9278cd524099
+RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
 RUN apt install zip rsync unzip expect proftpd perl iptables openssh-server -y
 
