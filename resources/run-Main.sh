@@ -55,7 +55,7 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 		echo "Preparation cuberite has been selected." >&1
 		sh /minecraft/resources/pre-PC-Cuberite.sh
 	elif [ "${SRVTYPE}" =  "mcpc" ]; then
-		echo "NOT implement Preparation mcpc has been selected." >&1
+		echo "Preparation mcpc has been selected." >&1
 		sh  /minecraft/resources/pre-PC-vanilla.sh
 	elif [ "${SRVTYPE}" =  "spigot" ]; then
 		echo "NOT implement Preparation spigot has been selected." >&1
@@ -101,7 +101,7 @@ elif [ "${SRVTYPE}" = "cuberite" ]; then
 	sh /minecraft/resources/run-PC-Cuberite.sh
 elif [ "${SRVTYPE}" =  "mcpc" ]; then
 	echo "Starter mcpc has been selected." >&1
-	sh /minecraft/resources/run-MCPC.sh
+	sh /minecraft/resources/run-PC-vanilla.sh
 elif [ "${SRVTYPE}" =  "spigot" ]; then
 	echo "Starter spigot has been selected." >&1
 	sh /minecraft/resources/run-SPIG.sh

@@ -15,7 +15,6 @@ generator-settings=
 resource-pack=
 player-idle-timeout=0
 level-name=world
-motd=A Minecraft Server
 announce-player-achievements=true
 force-gamemode=false
 hardcore=false
