@@ -58,8 +58,11 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 		echo "Preparation mcpc has been selected." >&1
 		sh  /minecraft/resources/pre-PC-vanilla.sh
 	elif [ "${SRVTYPE}" =  "spigot" ]; then
-		echo "NOT implement Preparation spigot has been selected." >&1
-		sh /minecraft/resources/pre-SPIG.sh
+		echo " Preparation spigot has been selected." >&1
+		sh  /minecraft/resources/pre-PC-vanilla.sh
+	elif [ "${SRVTYPE}" =  "bukkit" ]; then
+		echo " Preparation bukkit has been selected." >&1
+		sh  /minecraft/resources/pre-PC-vanilla.sh
 	else
 		echo 'Invalid SRVTYPE!' >&2
 		ER="true"
@@ -104,7 +107,10 @@ elif [ "${SRVTYPE}" =  "mcpc" ]; then
 	sh /minecraft/resources/run-PC-vanilla.sh
 elif [ "${SRVTYPE}" =  "spigot" ]; then
 	echo "Starter spigot has been selected." >&1
-	sh /minecraft/resources/run-SPIG.sh
+	sh /minecraft/resources/run-PC-vanilla.sh
+elif [ "${SRVTYPE}" =  "bukkit" ]; then
+	echo "Starter bukkit has been selected." >&1
+	sh /minecraft/resources/run-PC-vanilla.sh
 else
 	echo 'Invalid SRVTYPE!' >&2
 	ER="true"
