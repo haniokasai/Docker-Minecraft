@@ -71,6 +71,14 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 	echo "Initial Start...done" >&1
 fi
 
+###############
+#Unset Secrets#
+###############
+unset ftp_pass
+unset ftp_login
+unset PASSWD
+unset SRVID
+
 #############
 #Permission #
 #############
