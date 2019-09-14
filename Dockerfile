@@ -36,5 +36,5 @@ RUN touch /minecraft/initialstart
 COPY ./resources/*  /minecraft/resources/
 
 #Minecraft and FTP
-WORKDIR /minecraft/server
-ENTRYPOINT [/minecraft/resources/run-Main.sh]
+WORKDIR /minecraft/resources/
+ENTRYPOINT [run-Main.sh]
