@@ -37,4 +37,4 @@ COPY ./resources/*  /minecraft/resources/
 
 #Minecraft and FTP
 WORKDIR /minecraft/resources/
-ENTRYPOINT [run-Main.sh]
+ENTRYPOINT sh /minecraft/resources/run-Main.sh
