@@ -22,7 +22,9 @@ docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19
 chmod +x getFiles.sh
 sh getFiles.sh
 docker build . -t haniokasai/docker-minecraft
-
+chmod +x getFiles.sh
+sh getFiles.sh
+docker build . -t haniokasai/docker-minecraft
 ```
 
 # Sysinstall
