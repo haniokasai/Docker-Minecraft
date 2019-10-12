@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" editBeforeRun="true" nameIsGenerated="true" path="$PROJECT_DIR$/resources/crashdump.php">
+    <CommandLine workingDirectory="$PROJECT_DIR$/resources" />
+    <method v="2" />
+  </configuration>
+</component>

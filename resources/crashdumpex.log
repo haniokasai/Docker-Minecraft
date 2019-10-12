@@ -1,0 +1,107 @@
+PocketMine-MP Crash Dump Wed Jul 24 09:12:12 JST 2019
+
+Error: Class 'pocketmine\network\mcpe\protocol\EntityEventPacket' not found
+File: plugins/TeaSpoon_dev-277.phar/src/CortexPE/entity/projectile/FireworkRocket
+Line: 96
+Type: Error
+
+THIS CRASH WAS CAUSED BY A PLUGIN
+BAD PLUGIN: TeaSpoon v1.1.2
+
+Code:
+
+Backtrace:
+#0 src/pocketmine/entity/Entity(2129): CortexPE\entity\projectile\FireworkRocket->despawnFromAll()
+#1 src/pocketmine/level/Level(853): pocketmine\entity\Entity->close()
+#2 src/pocketmine/level/Level(787): pocketmine\level\Level->actuallyDoTick(integer 374)
+#3 src/pocketmine/Server(2419): pocketmine\level\Level->doTick(integer 374)
+#4 src/pocketmine/Server(2542): pocketmine\Server->checkTickUpdates(integer 374, double 1563927132.3966)
+#5 src/pocketmine/Server(2319): pocketmine\Server->tick()
+#6 src/pocketmine/Server(2195): pocketmine\Server->tickProcessor()
+#7 src/pocketmine/Server(1782): pocketmine\Server->start()
+#8 src/pocketmine/PocketMine(259): pocketmine\Server->__construct(object BaseClassLoader, object pocketmine\utils\MainLogger, string[25] /steadym/srv/SMILEServer/, string[33] /steadym/srv/SMILEServer/plugins/)
+#9 (1): require(string[90] phar:///steadym/sys/multiphar/20190713_pmmp_v112_API390.phar/src/pocketmine/Pock)
+
+PocketMine-MP version: 3.9.0 [Protocol 361]
+Git commit: 0000000000000000000000000000000000000000
+uname -a: Linux haniokasai 4.15.0-54-generic #58-Ubuntu SMP Mon Jun 24 10:55:24 UTC 2019 x86_64
+PHP Version: 7.2.9
+Zend version: 3.2.0
+OS : Linux, linux
+
+Loaded plugins:
+StatusScreen-alpha 8.0.0 by mixpowder for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12
+SpamBan 2.0.0 by  for API(s) 3.0.0
+MiRmUseful 1.0.2 by haniokasai for API(s) 4.0.0, 3.0.0
+NoFastBreak 0.1 by ribnil for API(s) 3.4.0
+BanItem 2.2.11 by LDX, ねらひかだ for API(s) 3.0.0, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11
+ChestLocker 1.5 by EvolSoft for API(s) 3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12, 3.0.0-ALPHA13
+DevTools 1.13.0 by PocketMine Team for API(s) 3.0.0
+LoginSystem 6.0.1mirm2 by tukikage7127 for API(s) 1.0.0, 2.0.0, 3.0.0
+EconomyPShop 2.0.2 by onebone for API(s) 3.0.0-ALPHA7
+PermissionPlus 1.6.2 by Hmy2001 for API(s) 3.0.0
+TagGame 100 by musaichi, mcshigo, PawarenessC, jggj2, ribnil, MACHI000 for API(s) 4.0.0, 3.0.0, 3.5.0
+CommandSigns 2 by Samueljh1 for API(s) 1.0.0
+EconomyAPI 2.0.9_mirm3 by onebone for API(s) 3.0.0, 2.0.0, 2.1.0
+WorldEditPlus 3.1 by CreeParker (@cree_parker) for API(s) 3.0.0, 4.0.0
+EconomyJob 2.0.4 by onebone for API(s) 3.0.0-ALPHA7, 3.7.0
+ItemCloud 1.3.1 by onebone for API(s) 3.0.0
+EconomyLand 2.0.9 by onebone for API(s) 3.0.0-ALPHA7
+LoadTheWorld 1.0.0 by narapon for API(s) 3.0.0-ALPHA12
+OldEconomyShop 2.0.6 by onebone, QuartzTeam for API(s) 3.0.0, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11
+FormAPI 1.1.1 by jojoe77777 for API(s) 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12
+NV 0.0.1 by chaca142 for API(s) 4.0.0, 3.3.1
+KillBearBoyshk 3.0.0 by Hmy2001,haniokasai,dd0r for API(s) 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.8.3
+Really_simple_warp 400 by Yomogiβ for API(s) 3.0.0
+TeaSpoon 1.1.2 by CortexPE for API(s) 3.5.1
+SignRanks 0 by yamasin105 for API(s) 3.0.0
+SignPortal 1.1.2 by 99leonchang for API(s) 3.0.0
+EconomySell 2.0.6 by onebone, QuartzMC for API(s) 3.0.0, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11
+
+----------------------REPORT THE DATA BELOW THIS LINE-----------------------
+
+===BEGIN CRASH DUMP===
+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
+===END CRASH DUMP===
