@@ -28,7 +28,7 @@ else
 	exit 1
 fi
 
-
+rm -rf /minecraft/server/resource_packs
 /minecraft/bin/bin/php7/bin/php \
 	-n \
 	-d "open_basedir=/tmp:phar://:/minecraft/server" \
@@ -48,3 +48,4 @@ fi
 	-d "assert.exception=1" \
 	-d "error_reporting=0" \
 	"${PHARFILE}"
+rm -rf /minecraft/server/resource_packs
