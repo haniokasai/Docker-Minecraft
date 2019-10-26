@@ -128,7 +128,7 @@ fi
 
 UNIXTIME_END=$(date +%s)
 
-if [ "$((${UNIXTIME_START}-${UNIXTIME_END}))"  -gt 30 ]; then
+if [ "$((${UNIXTIME_END}-${UNIXTIME_START}))"  -gt 30 ]; then
 	echo "Main Server Start...done" >&1
 else
 	echo "Main Server Start...failed" >&1
