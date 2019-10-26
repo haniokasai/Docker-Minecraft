@@ -7,7 +7,7 @@ mkdir -p ${WDIR}/bds
 
 if [ -e ${WDIR}/bds.zip ]; then
 	echo "${WDIR}/bds.zip is exist"  >&1
-	if [ ! -z "${MD5HASH}" -o ! ${MD5HASH} -eq `md5sum ${WDIR}/bds.zip` ]; then
+	if [ ! -z "${MD5HASH}" ] || [ ! ${MD5HASH} -eq `md5sum ${WDIR}/bds.zip` ]; then
 		echo "HASH is DIFFERENT"  >&1
 		rm -rf ${WDIR}/bds/*
 		cd ${WDIR}
