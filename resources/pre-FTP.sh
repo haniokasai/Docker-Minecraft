@@ -33,4 +33,5 @@ unset SRVID
  
 chown -hR $ftp_login:ftpgroup /minecraft/server
 
+touch /minecraft/nonftp
 echo "Prepare ftp....done" >&1
