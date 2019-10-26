@@ -13,14 +13,13 @@ if [ -e ${WDIR}/bds.zip ]; then
 	NEWHASH=`md5sum ${WDIR}/bds.zip`
 	if [ "${MD5HASH}" != "${NEWHASH}" ]; then
 		echo "HASH is DIFFERENT"  >&1
-		unzip -qq bds.zip
 		HA=`md5sum bds.zip`
+		export MD5HASH=${HA}
 		rm -rf ${WDIR}/bds/*
 		cd ${WDIR}
 		mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
 		cd ${WDIR}/bds/
-
-		export MD5HASH=${HA}
+		unzip -qq bds.zip
 		rm -rf bds.zip
 		rm -rf /minecraft/bin/bedrock_server
 		rm -rf /minecraft/bin/bedrock_server
