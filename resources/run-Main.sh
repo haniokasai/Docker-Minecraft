@@ -99,6 +99,9 @@ fi
 #Minecraft #
 ############
 echo "Main Server Start..." >&1
+
+UNIXTIME_START=$(date +%s)
+
 cd /minecraft/server
 rm -rf /minecraft/server/resource_packs
 if [ "${SRVTYPE}" =  "pmmp" ]; then
@@ -123,7 +126,15 @@ else
 	echo 'Invalid SRVTYPE!' >&2
 	ER="true"
 fi
-echo "Main Server Start...done" >&1
+
+if [ $UNIXTIME_START - $(date +%s) > 30 ]; then
+	echo "Main Server Start...done" >&1
+else
+	echo "Main Server Start...failed" >&1
+	echo "Waiting for User Action for 10 min..." >&1
+	sleep 600
+	echo "Waiting for User Action for 10 min...done" >&1
+fi
 
 ##########
 #Stop FTP#
