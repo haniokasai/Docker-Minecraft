@@ -7,7 +7,7 @@ rm -rf ${WDIR}/bds/*
 cd ${WDIR}
 mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
 cd ${WDIR}/bds/
-unzip bds.zip
+unzip -qq bds.zip
 rm -rf bds.zip
 rm -rf /minecraft/bin/bedrock_server
 rm -rf /minecraft/bin/bedrock_server
