@@ -103,7 +103,6 @@ echo "Main Server Start..." >&1
 UNIXTIME_START=$(date +%s)
 
 cd /minecraft/server
-rm -rf /minecraft/server/resource_packs
 if [ "${SRVTYPE}" =  "pmmp" ]; then
 	echo "Starter pmmp has been selected." >&1
 	sh /minecraft/resources/run-BE-PMMP.sh
