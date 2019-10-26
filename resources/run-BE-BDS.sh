@@ -3,18 +3,32 @@ echo "run bds...." >&1
 
 WDIR=/minecraft/resources
 mkdir -p ${WDIR}/bds
-rm -rf ${WDIR}/bds/*
-cd ${WDIR}
-mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
-cd ${WDIR}/bds/
-unzip -qq bds.zip
-rm -rf bds.zip
-rm -rf /minecraft/bin/bedrock_server
-rm -rf /minecraft/bin/bedrock_server
-rm -rf /minecraft/bin/libCrypto.so
-mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
-mv ${WDIR}/bds/libCrypto.so /usr/local/lib/libCrypto.so
-rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
+
+
+if [ -e ${WDIR}/bds.zip ]; then
+	echo "${WDIR}/bds.zip is exist"  >&1
+	if [ ! -z "${MD5HASH}" -o ! ${MD5HASH} -eq `md5sum ${WDIR}/bds.zip` ]; then
+		echo "HASH is DIFFERENT"  >&1
+		rm -rf ${WDIR}/bds/*
+		cd ${WDIR}
+		mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
+		cd ${WDIR}/bds/
+		unzip -qq bds.zip
+		export MD5HASH=`md5sum bds.zip`
+		rm -rf bds.zip
+		rm -rf /minecraft/bin/bedrock_server
+		rm -rf /minecraft/bin/bedrock_server
+		rm -rf /minecraft/bin/libCrypto.so
+		mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
+		mv ${WDIR}/bds/libCrypto.so /usr/local/lib/libCrypto.so
+		rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
+	else
+		echo "HASH is SAME"  >&1
+	fi
+else
+	echo "${WDIR}/bds.zip is NOT exist"  >&1
+fi
+
 
 sh /minecraft/resources/setPerm.sh
 cd /minecraft/server
