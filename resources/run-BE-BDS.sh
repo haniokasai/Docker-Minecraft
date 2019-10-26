@@ -7,14 +7,20 @@ mkdir -p ${WDIR}/bds
 
 if [ -e ${WDIR}/bds.zip ]; then
 	echo "${WDIR}/bds.zip is exist"  >&1
-	if [ ! -z "${MD5HASH}" ] || [ ! ${MD5HASH} -eq `md5sum ${WDIR}/bds.zip` ]; then
+	if [ ! -z "${MD5HASH}" ]; then
+		MD5HASH="ex"
+	fi
+	NEWHASH=`md5sum ${WDIR}/bds.zip`
+	if [ "${MD5HASH}" != "${NEWHASH}" ]; then
 		echo "HASH is DIFFERENT"  >&1
+		unzip -qq bds.zip
+		HA=`md5sum bds.zip`
 		rm -rf ${WDIR}/bds/*
 		cd ${WDIR}
 		mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
 		cd ${WDIR}/bds/
-		unzip -qq bds.zip
-		export MD5HASH=`md5sum bds.zip`
+
+		export MD5HASH=${HA}
 		rm -rf bds.zip
 		rm -rf /minecraft/bin/bedrock_server
 		rm -rf /minecraft/bin/bedrock_server
