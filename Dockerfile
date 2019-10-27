@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN: when image is being built
 #apt srv https://qiita.com/fkshom/items/53de3a9b9278cd524099
-RUN sed -i.bak -e "s%http://[^ ]\+%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
+RUN sed -i.bak -e "s%http://[^ ]\+%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
 #curl for libcurl4 for bds
 RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre iptables-persistent -y
