@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i.bak -e "s%http://[^ ]\+%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
 RUN apt update
 #curl for libcurl4 for bds
-RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre -y
+RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre iptables-persistent -y
 
 #Make necessary dirs
 RUN mkdir /minecraft
