@@ -2,7 +2,6 @@
 echo "pre process...." >&1
 WDIR=/minecraft/resources
 cd ${WDIR}
-sh blockUDP.sh
 
 if [ "${SRVTYPE}" =  "mcpc" ]; then
 	echo "Copy mcpc_vanilla_*.jar..." >&1

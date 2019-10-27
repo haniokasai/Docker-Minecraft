@@ -2,6 +2,8 @@
 echo "run vanilla...." >&1
 
 sh /minecraft/resources/setPerm.sh
+sh /minecraft/resources/blockUDP.sh
+
 cd /minecraft/server
 echo "if you do not agree eura, please stop now...." >&1
 echo "eula=true" > eula.txt

@@ -1,6 +1,10 @@
 #!/bin/sh
 
 echo "Starting PMMP..." >&1
+
+sh /minecraft/resources/setPerm.sh
+sh /minecraft/resources/blockTCP.sh
+
 sleep 1
 PHARFILE="/minecraft/server/pmmp.phar"
 

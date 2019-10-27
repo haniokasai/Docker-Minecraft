@@ -1,6 +1,5 @@
 #!/bin/sh
 echo "pre process...." >&1
-sh /minecraft/resources/blockTCP.sh
 
 WDIR=/minecraft/resources
 mkdir -p ${WDIR}/bds

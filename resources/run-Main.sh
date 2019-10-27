@@ -31,14 +31,7 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 
 	sh /minecraft/resources/pre-FTP.sh
 	
-	#-----------------#
-	#Block Outgoing   #
-	#-----------------#
-	#sshは抜こう
-	iptables -A OUTPUT -p tcp --dport 1:1023 -j REJECT --reject-with tcp-reset
-	iptables -A OUTPUT -p udp --dport 1:1023 -j DROP
-	iptables -A OUTPUT -p tcp --dport 1:1023 -j DROP
-	iptables -A OUTPUT -p icmp -j DROP
+
 	#-----------------#
 	#Minecraft Prepare#
 	#-----------------#
@@ -78,6 +71,15 @@ unset ftp_pass
 unset ftp_login
 unset PASSWD
 unset SRVID
+
+#-----------------#
+#Block Outgoing   #
+#-----------------#
+#sshは抜こう
+iptables -A OUTPUT -p tcp --dport 1:1023 -j REJECT --reject-with tcp-reset
+iptables -A OUTPUT -p udp --dport 1:1023 -j DROP
+iptables -A OUTPUT -p tcp --dport 1:1023 -j DROP
+iptables -A OUTPUT -p icmp -j DROP
 
 #############
 #Permission #

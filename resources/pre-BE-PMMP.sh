@@ -1,6 +1,5 @@
 #!/bin/sh
 echo "pre process...." >&1
-sh /minecraft/resources/blockTCP.sh
 
 mv /minecraft/resources/PHP*.tar.gz /minecraft/bin/PHP.tar.gz
 cd /minecraft/bin/
