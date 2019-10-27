@@ -87,7 +87,7 @@ sh /minecraft/resources/setPerm.sh
 ############
 #Start FTP #
 ############
-if [ ! -e "/minecraft/nonftp"  ]; then
+if [ ! -e "/minecraft/bin/nonftp"  ]; then
 	echo "Starting sftpd..." >&1
 	exec /usr/sbin/sshd -D -e &
 	echo $! > /minecraft/bin/sftpd.pid
