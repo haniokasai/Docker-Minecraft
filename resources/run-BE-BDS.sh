@@ -26,7 +26,7 @@ if [ -e ${WDIR}/bds.zip ]; then
 		rm -rf /minecraft/bin/libCrypto.so
 		mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
 		mv ${WDIR}/bds/libCrypto.so /usr/local/lib/libCrypto.so
-		rsync ${WDIR}/bds/ /minecraft/server/ -av --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json
+		rsync ${WDIR}/bds/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
 	else
 		echo "HASH is SAME"  >&1
 	fi
