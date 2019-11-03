@@ -116,13 +116,13 @@ elif [ "${SRVTYPE}" = "cuberite" ]; then
 	sh /minecraft/resources/run-PC-Cuberite.sh
 elif [ "${SRVTYPE}" =  "mcpc" ]; then
 	echo "Starter mcpc has been selected." >&1
-	sh /minecraft/resources/run-PC-vanilla.sh
+	bash /minecraft/resources/run-PC-vanilla.sh
 elif [ "${SRVTYPE}" =  "spigot" ]; then
 	echo "Starter spigot has been selected." >&1
-	sh /minecraft/resources/run-PC-vanilla.sh
+	bash /minecraft/resources/run-PC-vanilla.sh
 elif [ "${SRVTYPE}" =  "bukkit" ]; then
 	echo "Starter bukkit has been selected." >&1
-	sh /minecraft/resources/run-PC-vanilla.sh
+	bash /minecraft/resources/run-PC-vanilla.sh
 else
 	echo 'Invalid SRVTYPE!' >&2
 	ER="true"
