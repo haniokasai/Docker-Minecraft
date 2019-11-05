@@ -97,9 +97,9 @@ if [ ! -e "/minecraft/bin/nonftp"  ]; then
 	echo "Starting sftpd...done" >&1
 
 	echo "Starting syslog-ng..." >&1
-	exec /usr/bin/syslog-ng -F &
+	exec /usr/sbin/syslog-ng -F &
 	 echo $! > /minecraft/bin/syslog-ng.pid
-	cat /minecraft/sbin/syslog-ng.pid
+	cat /minecraft/bin/syslog-ng.pid
 
  	echo "Starting fail2ban...done" >&1
 
