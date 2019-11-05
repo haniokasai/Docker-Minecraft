@@ -9,15 +9,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i.bak -e "s%http://[^ ]\+%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
 #curl for libcurl4 for bds
-RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre iptables-persistent -y
+RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre fail2ban -y
 
 #Make necessary dirs
-RUN mkdir /minecraft
-RUN mkdir /minecraft/resources
-RUN mkdir /minecraft/bin
-RUN mkdir /minecraft/server
-##These dirs are for PM-MP there should be mounted.
-RUN mkdir /minecraft/defaultplugins
+RUN mkdir -p  /minecraft  /minecraft/resources /minecraft/bin /minecraft/server /minecraft/defaultplugins /var/run/fail2ban
 ##Initial flag
 RUN touch /minecraft/initialstart
 #RUN touch /minecraft/buildnow

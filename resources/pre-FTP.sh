@@ -35,3 +35,9 @@ chown -hR $ftp_login:ftpgroup /minecraft/server
 
 touch /minecraft/bin/nonftp
 echo "Prepare ftp....done" >&1
+
+echo "Prepare fail2ban...." >&1
+
+cp /minecraft/resources/jail.local /etc/fail2ban/jail.d/jail.local
+
+echo "Prepare fail2ban....done" >&1

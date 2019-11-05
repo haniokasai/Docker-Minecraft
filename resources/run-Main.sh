@@ -95,6 +95,15 @@ if [ ! -e "/minecraft/bin/nonftp"  ]; then
 	echo $! > /minecraft/bin/sftpd.pid
 	cat /minecraft/bin/sftpd.pid
 	echo "Starting sftpd...done" >&1
+
+	echo "Starting fail2ban..." >&1
+
+	 /usr/bin/fail2ban-client -x start -s /var/run/fail2ban/fail2ban.sock &
+	 echo $! > /minecraft/bin/fail2ban.pid
+	cat /minecraft/bin/fail2ban.pid
+
+ 	echo "Starting fail2ban...done" >&1
+
 fi
 
 ############
@@ -142,11 +151,22 @@ fi
 ##########
 #Stop FTP#
 ##########
+if [ ! -e "/minecraft/bin/nonftp"  ]; then
+
 echo "Stopping sftpd..." >&1
 cat /minecraft/bin/sftpd.pid
 kill -9 `cat /minecraft/bin/sftpd.pid`
-rm /minecraft/bin/*.pid
 echo "Stopping sftpd...done" >&1
+
+echo "Stopping fail2ban..." >&1
+cat /minecraft/bin/fail2ban.pid
+kill -9 `cat /minecraft/bin/fail2ban.pid`
+echo "Stopping fail2ban...done" >&1
+
+rm /minecraft/bin/*.pid
+
+fi
+
 
 if [ -z "${ER}" ]; then
 	echo "Shutdown..." >&2
@@ -155,3 +175,4 @@ else
 	echo "Shutdown..." >&1
 	exit 0
 fi
+
