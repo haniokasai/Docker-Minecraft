@@ -16,8 +16,7 @@ echo "X11Forwarding no" >> ${SSHDFILE}
 echo "AllowTcpForwarding no" >> ${SSHDFILE}
 echo "ChrootDirectory /minecraft/server" >> ${SSHDFILE}
 echo "ForceCommand internal-sftp" >> ${SSHDFILE}
-echo "auth,authpriv.* /var/log/auth.log" >> ${SSHDFILE}
- mkdir -p /run/sshd
+mkdir -p /run/sshd
  
 groupadd ftpgroup
 ftp_login=${SRVID}

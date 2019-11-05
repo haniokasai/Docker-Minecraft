@@ -81,6 +81,12 @@ iptables -A OUTPUT -p udp --dport 1:1023 -j DROP
 iptables -A OUTPUT -p tcp --dport 1:1023 -j DROP
 iptables -A OUTPUT -p icmp -j DROP
 
+#http://www2s.biglobe.ne.jp/~nuts/labo/inti/ipt_recent.html
+#
+iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --set
+iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 8 -j LOG --log-prefix 'SSH attack: '
+iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 8 -j DROP
+
 #############
 #Permission #
 #############
@@ -95,20 +101,6 @@ if [ ! -e "/minecraft/bin/nonftp"  ]; then
 	echo $! > /minecraft/bin/sftpd.pid
 	cat /minecraft/bin/sftpd.pid
 	echo "Starting sftpd...done" >&1
-
-	echo "Starting syslog-ng..." >&1
-	exec /usr/sbin/syslog-ng -F --no-caps &
-	echo $! > /minecraft/bin/syslog-ng.pid
-	cat /minecraft/bin/syslog-ng.pid
-
- 	echo "Starting fail2ban...done" >&1
-
-	echo "Starting fail2ban..." >&1
-	exec /usr/bin/fail2ban-client -x start &
-	 echo $! > /minecraft/bin/fail2ban.pid
-	cat /minecraft/bin/fail2ban.pid
-
- 	echo "Starting fail2ban...done" >&1
 
 fi
 
@@ -163,16 +155,6 @@ echo "Stopping sftpd..." >&1
 cat /minecraft/bin/sftpd.pid
 kill -9 `cat /minecraft/bin/sftpd.pid`
 echo "Stopping sftpd...done" >&1
-
-echo "Stopping syslog-ng..." >&1
-cat /minecraft/bin/syslog-ng.pid
-kill -9 `cat /minecraft/bin/syslog-ng.pid`
-echo "Stopping syslog-ng...done" >&1
-
-echo "Stopping fail2ban..." >&1
-cat /minecraft/bin/fail2ban.pid
-kill -9 `cat /minecraft/bin/fail2ban.pid`
-echo "Stopping fail2ban...done" >&1
 
 rm /minecraft/bin/*.pid
 
