@@ -39,5 +39,6 @@ echo "Prepare ftp....done" >&1
 echo "Prepare fail2ban...." >&1
 
 cp /minecraft/resources/jail.local /etc/fail2ban/jail.d/jail.local
+cp /minecraft/resources/fail2ban.local /etc/fail2ban/jail.d/fail2ban.local
 
 echo "Prepare fail2ban....done" >&1
