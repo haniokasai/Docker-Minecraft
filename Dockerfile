@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i.bak -e "s%http://[^ ]\+%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 RUN apt update
 #curl for libcurl4 for bds
-RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre rsyslogd fail2ban -y
+RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre rsyslog fail2ban -y
 
 #Make necessary dirs
 RUN mkdir -p  /minecraft  /minecraft/resources /minecraft/bin /minecraft/server /minecraft/defaultplugins /var/run/fail2ban
