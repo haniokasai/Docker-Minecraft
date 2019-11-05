@@ -84,8 +84,8 @@ iptables -A OUTPUT -p icmp -j DROP
 #http://www2s.biglobe.ne.jp/~nuts/labo/inti/ipt_recent.html
 #
 iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --set
-iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 8 -j LOG --log-prefix 'SSH attack: '
-iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 8 -j DROP
+iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 5 -j LOG --log-prefix 'SSH attack: '
+iptables -A INPUT -p tcp --syn --dport 22 -m recent --name sshattack --rcheck --seconds 60 --hitcount 5 -j DROP
 
 #############
 #Permission #
