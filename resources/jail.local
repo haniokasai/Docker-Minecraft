@@ -2,7 +2,7 @@
 bantime  = 86400
 findtime  = 86400
 maxretry = 5
-backend = auto
+backend = polling
 
 [sshd]
 enabled = true
