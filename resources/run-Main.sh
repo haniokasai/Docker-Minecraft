@@ -98,7 +98,7 @@ if [ ! -e "/minecraft/bin/nonftp"  ]; then
 
 	echo "Starting fail2ban..." >&1
 
-	 /usr/bin/fail2ban-client -x start -s /var/run/fail2ban/fail2ban.sock &
+	 /usr/bin/fail2ban-client -x start &
 	 echo $! > /minecraft/bin/fail2ban.pid
 	cat /minecraft/bin/fail2ban.pid
 
