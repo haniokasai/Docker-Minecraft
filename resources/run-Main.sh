@@ -96,8 +96,15 @@ if [ ! -e "/minecraft/bin/nonftp"  ]; then
 	cat /minecraft/bin/sftpd.pid
 	echo "Starting sftpd...done" >&1
 
+	echo "Starting syslog-ng..." >&1
+	exec /usr/bin/syslog-ng -F &
+	 echo $! > /minecraft/bin/syslog-ng.pid
+	cat /minecraft/bin/syslog-ng.pid
+
+ 	echo "Starting fail2ban...done" >&1
+
 	echo "Starting fail2ban..." >&1
-	 /usr/bin/fail2ban-client -x start &
+	exec /usr/bin/fail2ban-client -x start &
 	 echo $! > /minecraft/bin/fail2ban.pid
 	cat /minecraft/bin/fail2ban.pid
 
@@ -157,6 +164,10 @@ cat /minecraft/bin/sftpd.pid
 kill -9 `cat /minecraft/bin/sftpd.pid`
 echo "Stopping sftpd...done" >&1
 
+echo "Stopping syslog-ng..." >&1
+cat /minecraft/bin/syslog-ng.pid
+kill -9 `cat /minecraft/bin/syslog-ng.pid`
+echo "Stopping syslog-ng...done" >&1
 
 echo "Stopping fail2ban..." >&1
 cat /minecraft/bin/fail2ban.pid
