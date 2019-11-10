@@ -12,7 +12,7 @@ RUN apt update
 RUN apt install zip rsync unzip expect perl curl iptables openssh-server openjdk-8-jre -y
 
 #Make necessary dirs
-RUN mkdir -p  /minecraft  /minecraft/resources /minecraft/bin /minecraft/server /minecraft/defaultplugins /var/run/fail2ban
+RUN mkdir -p  /minecraft  /minecraft/resources /minecraft/bin /minecraft/server /minecraft/defaultplugins /minecraft/server/backup
 ##Initial flag
 RUN touch /minecraft/initialstart
 #RUN touch /minecraft/buildnow
