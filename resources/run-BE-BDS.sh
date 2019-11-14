@@ -7,14 +7,13 @@ mkdir -p ${WDIR}/bds
 
 if [ -e ${WDIR}/bds.zip ]; then
 	echo "${WDIR}/bds.zip is exist"  >&1
-	if [ ! -z "${MD5HASH}" ]; then
-		MD5HASH="ex"
+	if [  ! -e "/minecraft/bin/BDShash" ]; then
+		touch /minecraft/bin/BDShash
 	fi
 	NEWHASH=`md5sum ${WDIR}/bds.zip`
-	if [ "${MD5HASH}" != "${NEWHASH}" ]; then
+	if [ `cat /minecraft/bin/BDShash` != "${NEWHASH}" ]; then
 		echo "HASH is DIFFERENT"  >&1
-		HA=`md5sum ${WDIR}/bds.zip`
-		export MD5HASH=${HA}
+		md5sum ${WDIR}/bds.zip > /minecraft/bin/BDShash
 		rm -rf ${WDIR}/bds/*
 		cd ${WDIR}
 		mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip

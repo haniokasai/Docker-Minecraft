@@ -77,7 +77,9 @@ docker cp ホスト/それ　コンテナ/それ<br>
 - /minecraft/resources/bds.zip
 - /minecraft/resources/cuberite*.tar.gz
 - /minecraft/resources/PHP*.tar.gz
-- /minecraft/resources/defaultplugins*.tar.gz
+- /minecraft/resources/defaultplugins.tar.gz
+- /minecraft/bin/BDShash bdsのzipのハッシュ
+
 ## ユーザー領域
 - /minecraft/server/ サーバーデータ、FTPアクセス可能
 
