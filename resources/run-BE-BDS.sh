@@ -11,7 +11,11 @@ if [ -e ${WDIR}/bds.zip ]; then
 		touch /minecraft/bin/BDShash
 	fi
 	NEWHASH=`md5sum ${WDIR}/bds.zip`
-	if [ `cat /minecraft/bin/BDShash` != "${NEWHASH}" ]; then
+	declare file_content=$( cat /minecraft/bin/BDShash )
+
+	if [ "${file_content}" =~ "${NEWHASH}" ]; then
+		echo "HASH is SAME"  >&1
+	else
 		echo "HASH is DIFFERENT"  >&1
 		md5sum ${WDIR}/bds.zip > /minecraft/bin/BDShash
 		rm -rf ${WDIR}/bds/*
@@ -26,8 +30,6 @@ if [ -e ${WDIR}/bds.zip ]; then
 		mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
 		mv ${WDIR}/bds/libCrypto.so /usr/local/lib/libCrypto.so
 		rsync ${WDIR}/bds/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
-	else
-		echo "HASH is SAME"  >&1
 	fi
 else
 	echo "${WDIR}/bds.zip is NOT exist"  >&1
