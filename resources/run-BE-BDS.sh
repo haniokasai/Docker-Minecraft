@@ -13,7 +13,7 @@ if [ -e ${WDIR}/bds.zip ]; then
 	NEWHASH=`md5sum ${WDIR}/bds.zip`
 	if [ "${MD5HASH}" != "${NEWHASH}" ]; then
 		echo "HASH is DIFFERENT"  >&1
-		HA=`md5sum bds.zip`
+		HA=`md5sum ${WDIR}/bds.zip`
 		export MD5HASH=${HA}
 		rm -rf ${WDIR}/bds/*
 		cd ${WDIR}
