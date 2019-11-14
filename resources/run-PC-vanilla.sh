@@ -8,6 +8,6 @@ cd /minecraft/server
 echo "if you do not agree eura, please stop now...." >&1
 echo "eula=true" > eula.txt
 i=(`awk '/^Mem/ {printf("%u", $7);}' <(free -m)`)
-java -Xmx$((i/10*7))m -XX:MaxRAM=`cat /sys/fs/cgroup/memory/memory.limit_in_bytes` -jar /minecraft/bin/mcpc.jar  nogui
+su -l ${SRVID} -c "java -Xmx$((i/10*7))m -XX:MaxRAM=`cat /sys/fs/cgroup/memory/memory.limit_in_bytes` -jar /minecraft/bin/mcpc.jar  nogui"
 echo "run vanilla....done" >&1
 
