@@ -7,18 +7,18 @@ mkdir -p ${WDIR}/bds
 
 if [ -e ${WDIR}/bds.zip ]; then
 	echo "${WDIR}/bds.zip is exist"  >&1
-	md5sum ${WDIR}/bds.zip > /minecraft/bin/BDShash
-	rm -rf ${WDIR}/bds/*
-	cd ${WDIR}
-	mv ${WDIR}/bds.zip ${WDIR}/bds/bds.zip
-	cd ${WDIR}/bds/
+	mkdir -p /minecraft/bin/bds/
+	rm -rf /minecraft/bin/bds/*
+	cd /minecraft/bin/bds/
+	cp ${WDIR}/bds.zip /minecraft/bin/bds/bds.zip
 	unzip -qq bds.zip
 	rm -rf bds.zip
 	rm -rf /minecraft/bin/bedrock_server
 	rm -rf /minecraft/bin/libCrypto.so
-	mv ${WDIR}/bds/bedrock_server /minecraft/bin/bedrock_server
-	mv ${WDIR}/bds/libCrypto.so /usr/local/lib/libCrypto.so
-	rsync ${WDIR}/bds/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
+	mv /minecraft/bin/bds/bedrock_server /minecraft/bin/bedrock_server
+	mv /minecraft/bin/bds/libCrypto.so /usr/local/lib/libCrypto.so
+	rsync /minecraft/bin/bds/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
+
 else
 	echo "${WDIR}/bds.zip is NOT exist"  >&1
 fi

@@ -28,7 +28,7 @@ RUN touch /minecraft/initialstart
 #EXPOSE 8080/tcp
 
 #Copy
-COPY ./resources/*  /minecraft/resources/
+#COPY ./resources/*  /minecraft/resources/
 
 #Minecraft and FTP
 WORKDIR /minecraft/resources/
