@@ -9,11 +9,13 @@ echo "restore ....find files in ${directory}" >&1
 		rm -rf /minecraft/server/*
 		mkdir -p /minecraft/server/
 		mv ${directory}/server/* /minecraft/server/
+		rm -rf "${directory}"/*
 	else
 		echo "restore process....${directory} " >&1
 		rm -rf /minecraft/server/*
 		mkdir -p /minecraft/server/
 		mv ${directory}/* /minecraft/server/
+		rm -rf "${directory}"/*
 	fi
 else
 echo "restore ....${directory} is empty" >&1
