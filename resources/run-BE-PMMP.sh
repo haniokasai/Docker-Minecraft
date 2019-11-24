@@ -9,6 +9,8 @@ sleep 1
 PHARFILE="/minecraft/server/pmmp.phar"
 
 if [ -e "/minecraft/bin/nonftp" ]; then
+	rm -rf /minecraft/server/pmmp.phar
+	cp /minecraft/resources/pmmp_*.phar /minecraft/server/pmmp.phar
 	sh /minecraft/resources/pluginSync.sh
 else
 	echo "PMMP plugins are not synced..." >&1
