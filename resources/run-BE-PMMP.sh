@@ -55,7 +55,4 @@ su -l ${SRVID} -c "cd /minecraft/server ; /minecraft/bin/bin/php7/bin/php \\
 	-d \"error_reporting=0\" \\
 	\"${PHARFILE}\" "
 
-sub_pid=$!
-echo $sub_pid
-
 rm -rf /minecraft/server/resource_packs

@@ -16,7 +16,7 @@ docker create --name=コンテナ名 \
 ```
 
 ```bash
-docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19132/udp -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -it haniokasai/docker-minecraft -v /smx/docker_minecraft_res:/minecraft/resources:ro　(
+docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19132/udp -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -v /smx/docker_minecraft_res:/minecraft/resources:ro -it haniokasai/docker-minecraft　(
 ```
 
 ```bash
