@@ -26,10 +26,8 @@ useradd --shell /bin/bash -d /minecraft/server --password $CRYPTED_PASSWORD $ftp
 usermod $ftp_login -G ftpgroup
 
 unset ftp_pass
-unset ftp_login
 unset PASSWD
-unset SRVID
- 
+
 chown -hR $ftp_login:ftpgroup /minecraft/server
 
 touch /minecraft/bin/nonftp
