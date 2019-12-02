@@ -22,15 +22,14 @@ groupadd ftpgroup
 ftp_login=${SRVID}
 ftp_pass=${PASSWD}
 CRYPTED_PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $ftp_pass)
-useradd --shell /bin/bash -d /minecraft/server --password $CRYPTED_PASSWORD $ftp_login
+useradd --shell /bin/bash -d /minecraft/ftpworkdir --password $CRYPTED_PASSWORD $ftp_login
 usermod $ftp_login -G ftpgroup
 
 unset ftp_pass
-unset ftp_login
 unset PASSWD
-unset SRVID
- 
-chown -hR $ftp_login:ftpgroup /minecraft/server
+
+mkdir -p /minecraft/ftpworkdir
+chown -hR $ftp_login:ftpgroup /minecraft/ftpworkdir
 
 touch /minecraft/bin/nonftp
 echo "Prepare ftp....done" >&1

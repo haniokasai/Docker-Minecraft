@@ -80,9 +80,11 @@ docker cp ホスト/それ　コンテナ/それ<br>
 - /minecraft/resources/PHP*.tar.gz
 - /minecraft/resources/defaultplugins.tar.gz
 - /minecraft/bin/BDShash bdsのzipのハッシュ
+- /minecraft/server/ サーバーデータ
 
 ## ユーザー領域
-- /minecraft/server/ サーバーデータ、FTPアクセス可能
+- /minecraft/ftpworkdir FTPアクセス可能
+- /minecraft/ftpworkdir/server
 
 ## 識別子
 - /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない
