@@ -27,5 +27,5 @@ sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
-su -l ${SRVID} -c "cd /minecraft/server ; LD_LIBRARY_PATH=/usr/local/lib /minecraft/bin/bedrock_server"
+LD_LIBRARY_PATH=/usr/local/lib /minecraft/bin/bedrock_server
 echo "run bds....done" >&1

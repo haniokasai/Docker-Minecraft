@@ -5,10 +5,6 @@ if [ -z "${SRVTYPE}" ]; then
 fi
 
 
-#############
-#Mk Dir     #
-#############
-mkdir -p /minecraft/ftpworkdir /minecraft/ftpworkdir/server # run-FTP pre-FTPにも記載あり。
 
 #############
 #InitProcess#
@@ -99,7 +95,12 @@ sh /minecraft/resources/setPerm.sh
 #Start FTP #
 ############
 if [ ! -e "/minecraft/bin/nonftp"  ]; then
-	sh /minecraft/resources/run-FTP.sh
+	echo "Starting sftpd..." >&1
+	exec /usr/sbin/sshd -D -e &
+	echo $! > /minecraft/bin/sftpd.pid
+	cat /minecraft/bin/sftpd.pid
+	echo "Starting sftpd...done" >&1
+
 fi
 
 ############
