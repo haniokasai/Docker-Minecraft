@@ -68,9 +68,7 @@ fi
 #Unset Secrets#
 ###############
 unset ftp_pass
-unset ftp_login
 unset PASSWD
-unset SRVID
 
 #-----------------#
 #Block Outgoing   #
