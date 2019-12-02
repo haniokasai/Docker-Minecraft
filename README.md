@@ -21,9 +21,10 @@ docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19
 
 ```bash
 cd docker-minecraft
-chmod +x getFiles.sh
+git checkout .
+chmod +x *
 sh getFiles.sh
-git pull
+\cp --force resources/* /smx/docker_minecraft_res/ 
 docker build . -t haniokasai/docker-minecraft
 ```
 

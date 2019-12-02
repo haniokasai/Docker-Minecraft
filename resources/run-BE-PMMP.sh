@@ -54,12 +54,6 @@ cd /minecraft/server
 	-d "default_charset=utf-8" \
 	-d "assert.exception=1" \
 	-d "error_reporting=0" \
-	"${PHARFILE}"&
-
-echo $! > /minecraft/bin/minecraft.pid
-
-echo "Waiting for exiting of main process..." >&1
-wait `cat /minecraft/bin/minecraft.pid`
-echo "Waiting for exiting of main process...done" >&1
+	"${PHARFILE}"
 
 rm -rf /minecraft/server/resource_packs
