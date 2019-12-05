@@ -9,7 +9,7 @@ cd /minecraft/server
 
 #liblary
 echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local-lib.conf
-
+echo "LD_LIBRARY_PATH=/usr/local/lib/" >> /etc/environment
 if [ -z "${DIFFICULTY}" ]; then
 	DIFFICULTY="normal"
 fi

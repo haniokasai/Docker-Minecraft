@@ -30,6 +30,5 @@ sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
-export LD_LIBRARY_PATH=/minecraft/bin/bds/
 su ${SRVID} -p -c "cd /minecraft/server ;  /minecraft/bin/bedrock_server"
 echo "run bds....done" >&1
