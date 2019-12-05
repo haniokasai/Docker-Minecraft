@@ -29,5 +29,5 @@ sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
 export LD_LIBRARY_PATH=/usr/local/lib
-su -l ${SRVID} -p -c "cd /minecraft/server ;  /minecraft/bin/bedrock_server"
+su ${SRVID} -p -c "cd /minecraft/server ;  /minecraft/bin/bedrock_server"
 echo "run bds....done" >&1
