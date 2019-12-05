@@ -5,6 +5,10 @@ if [ -z "${SRVTYPE}" ]; then
 fi
 
 
+#############
+#Mk Dir     #
+#############
+
 
 #############
 #InitProcess#
@@ -95,12 +99,7 @@ sh /minecraft/resources/setPerm.sh
 #Start FTP #
 ############
 if [ ! -e "/minecraft/bin/nonftp"  ]; then
-	echo "Starting sftpd..." >&1
-	exec /usr/sbin/sshd -D -e &
-	echo $! > /minecraft/bin/sftpd.pid
-	cat /minecraft/bin/sftpd.pid
-	echo "Starting sftpd...done" >&1
-
+	sh /minecraft/resources/run-FTP.sh
 fi
 
 ############
