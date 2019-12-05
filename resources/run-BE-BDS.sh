@@ -30,5 +30,5 @@ sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
-su ${SRVID} -p -c "cd /minecraft/server ;  /minecraft/bin/bedrock_server"
+/minecraft/bin/bedrock_server
 echo "run bds....done" >&1
