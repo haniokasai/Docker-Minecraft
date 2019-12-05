@@ -2,7 +2,7 @@
 echo "chmod...." >&1
 
 #For sshd  bad ownership or modes for chroot directory "/minecraft/server"
-chown root -R /minecraft/
+chown root  /minecraft/
 chmod 2755  /minecraft/
 ##
 
