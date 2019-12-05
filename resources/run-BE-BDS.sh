@@ -17,6 +17,7 @@ if [ -e ${WDIR}/bds.zip ]; then
 	rm -rf /minecraft/bin/libCrypto.so
 	mv /minecraft/bin/bds/bedrock_server /minecraft/bin/bedrock_server
 	mv /minecraft/bin/bds/libCrypto.so /usr/local/lib/libCrypto.so
+	chmod 755 /usr/local/lib/libCrypto.so
 	rsync /minecraft/bin/bds/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
 
 else
