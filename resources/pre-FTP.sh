@@ -28,7 +28,5 @@ usermod $ftp_login -G ftpgroup
 unset ftp_pass
 unset PASSWD
 
-chown -hR $ftp_login:ftpgroup /minecraft/server
-
 touch /minecraft/bin/nonftp
 echo "Prepare ftp....done" >&1
