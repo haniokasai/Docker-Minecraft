@@ -7,6 +7,8 @@ WDIR=/minecraft/resources
 cp ${WDIR}/server.properties.bds /minecraft/server/server.properties
 cd /minecraft/server
 
+#liblary
+echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local-lib.conf
 
 if [ -z "${DIFFICULTY}" ]; then
 	DIFFICULTY="normal"
