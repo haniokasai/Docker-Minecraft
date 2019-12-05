@@ -16,14 +16,15 @@ docker create --name=コンテナ名 \
 ```
 
 ```bash
-docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19132/udp -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test -v /smx/docker_minecraft_res:/minecraft/resources:ro -it haniokasai/docker-minecraft　(
+docker create --cap-add=NET_ADMIN --name=new --storage-opt size=0.5g -p 20001:19132/udp -p 20002:22 -p  20003:8080  -e SRVTYPE=pmmp -e SRVID=new -e PASSWD=test  -v /smx/docker_minecraft_res:/minecraft/resources:ro -it haniokasai/docker-minecraft　(
 ```
 
 ```bash
 cd docker-minecraft
-chmod +x getFiles.sh
+git checkout .
+chmod +x *
 sh getFiles.sh
-git pull
+\cp --force resources/* /smx/docker_minecraft_res/ 
 docker build . -t haniokasai/docker-minecraft
 ```
 
@@ -80,10 +81,10 @@ docker cp ホスト/それ　コンテナ/それ<br>
 - /minecraft/resources/PHP*.tar.gz
 - /minecraft/resources/defaultplugins.tar.gz
 - /minecraft/bin/BDShash bdsのzipのハッシュ
-- /minecraft/server/ サーバーデータ
 
 ## ユーザー領域
 - /minecraft/server
+
 
 ## 識別子
 - /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない
