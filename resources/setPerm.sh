@@ -1,14 +1,16 @@
 #!/bin/sh
 echo "chmod...." >&1
 
+#For sshd  bad ownership or modes for chroot directory "/minecraft/server"
+chown root -R /minecraft/
+chmod 2755 -R /minecraft/
+##
+
 chgrp ftpgroup /minecraft/server -R
 chown ${SRVID} /minecraft/server/ -R
 chmod 2777 /minecraft/server/ -R
 
-#For sshd  bad ownership or modes for chroot directory "/minecraft/server"
-chown root /minecraft/ftpworkdir
-chmod 2755 /minecraft/ftpworkdir
-##
+
 
 chmod 2111 /minecraft/bin -R
 

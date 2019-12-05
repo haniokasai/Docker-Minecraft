@@ -83,8 +83,7 @@ docker cp ホスト/それ　コンテナ/それ<br>
 - /minecraft/server/ サーバーデータ
 
 ## ユーザー領域
-- /minecraft/ftpworkdir FTPアクセス可能
-- /minecraft/ftpworkdir/server
+- /minecraft/server
 
 ## 識別子
 - /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない

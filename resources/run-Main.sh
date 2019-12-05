@@ -8,7 +8,7 @@ fi
 #############
 #Mk Dir     #
 #############
-mkdir -p /minecraft/ftpworkdir /minecraft/ftpworkdir/server # run-FTP pre-FTPにも記載あり。
+
 
 #############
 #InitProcess#
