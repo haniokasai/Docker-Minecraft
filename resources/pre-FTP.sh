@@ -14,8 +14,8 @@ echo "UseDNS no" >> ${SSHDFILE}
 echo "Match Group ftpgroup" >> ${SSHDFILE}
 echo "X11Forwarding no" >> ${SSHDFILE}
 echo "AllowTcpForwarding no" >> ${SSHDFILE}
-echo "ChrootDirectory /minecraft/server" >> ${SSHDFILE}
-echo "ForceCommand internal-sftp" >> ${SSHDFILE}
+echo "ChrootDirectory /minecraft/" >> ${SSHDFILE}
+echo "ForceCommand internal-sftp -d /server" >> ${SSHDFILE}
 mkdir -p /run/sshd
  
 groupadd ftpgroup
