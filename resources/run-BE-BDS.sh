@@ -8,7 +8,8 @@ if [ -e ${WDIR}/bds.zip ]; then
 	echo "${WDIR}/bds.zip is exist"  >&1
 	mkdir -p /minecraft/bin/bds/
 	rm -rf /minecraft/bin/bds/*
-	cd /minecraft/bin/
+	mkdir -p  /minecraft/bin/bds/
+	cd /minecraft/bin/bds/
 	cp ${WDIR}/bds.zip /minecraft/bin/bds/bds.zip
 	unzip -qq bds.zip
 	rm -rf bds.zip
