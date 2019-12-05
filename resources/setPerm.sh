@@ -12,7 +12,6 @@ chown ${SRVID}:ftpgroup /minecraft/server/ -R
 chmod 2777 /minecraft/server/ -R
 
 chmod 2711 /minecraft/bin -R
-chmod 2711 /minecraft/resources -R
 chmod 2711 /minecraft/restore -R
 chmod 2755 /minecraft/defaultplugins -R
 
