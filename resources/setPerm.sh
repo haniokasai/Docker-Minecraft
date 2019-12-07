@@ -12,7 +12,10 @@ chown ${SRVID}:ftpgroup /minecraft/server/ -R
 chmod 2777 /minecraft/server/ -R
 
 chmod 2755 /minecraft/bin -R
+chown root /minecraft/bin -R
 chmod 2755 /minecraft/restore -R
+chown root /minecraft/restore -R
 chmod 2755 /minecraft/defaultplugins -R
+chown root /minecraft/defaultplugins -R
 
 echo "chmod....done" >&1
