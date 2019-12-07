@@ -5,6 +5,8 @@ sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockUDP.sh
 
 cd /minecraft/server
+chmod 755 /minecraft/bin -R
+chown root:root /minecraft/bin -R
 echo "if you do not agree eura, please stop now...." >&1
 echo "eula=true" > eula.txt
 i=(`awk '/^Mem/ {printf("%u", $7);}' <(free -m)`)
