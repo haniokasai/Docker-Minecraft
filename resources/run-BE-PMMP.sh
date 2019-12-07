@@ -4,8 +4,10 @@ echo "Starting PMMP..." >&1
 
 sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockTCP.sh
+chown root:root /minecraft/bin
 chmod 711 -R /minecraft/bin
 chmod 711 -R /minecraft/bin
+chown root:root /minecraft/bin
 
 sleep 1
 PHARFILE="/minecraft/server/pmmp.phar"
@@ -60,3 +62,5 @@ su -l ${SRVID} -c "cd /minecraft/server ; /minecraft/bin/bin/php7/bin/php \\
 
 rm -rf /minecraft/server/resource_packs
 chmod 711 -R /minecraft/bin
+chown root:root /minecraft/bin
+
