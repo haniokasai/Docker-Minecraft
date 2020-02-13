@@ -14,7 +14,7 @@ mv ${WDIR}/bdssync/libCrypto.so /usr/local/lib/libCrypto.so
 
 chmod 755 /usr/local/lib/libCrypto.so
 
-rsync ${WDIR}/bdssync/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup
+rsync ${WDIR}/bdssync/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup --exclude bedrock_server --exclude libCrypto.so
 
 sh /minecraft/resources/setPerm.sh
 sh /minecraft/resources/blockTCP.sh
