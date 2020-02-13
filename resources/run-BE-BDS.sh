@@ -9,7 +9,6 @@ rm -rf /minecraft/bin/bds/*
 rm -rf /minecraft/bin/bedrock_server
 rm -rf /minecraft/bin/libCrypto.so
 
-mv ${WDIR}/bdssync/bedrock_server /minecraft/bin/bedrock_server
 mv ${WDIR}/bdssync/libCrypto.so /usr/local/lib/libCrypto.so
 
 chmod 755 /usr/local/lib/libCrypto.so
@@ -21,6 +20,6 @@ sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
 
-LD_LIBRARY_PATH=/usr/local/lib /minecraft/bin/bedrock_server
+LD_LIBRARY_PATH=/usr/local/lib ${WDIR}/bdssync/bedrock_server
 
 echo "run bds....done" >&1
