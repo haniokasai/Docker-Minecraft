@@ -8,8 +8,7 @@ rm -rf /minecraft/bin/bds/*
 
 rm -rf /minecraft/bin/bedrock_server
 rm -rf /minecraft/bin/libCrypto.so
-
-chmod 755 /usr/local/lib/libCrypto.so
+rm -rf /usr/local/lib/libCrypto.so
 
 rsync ${WDIR}/bdssync/ /minecraft/server/ -aq --delete --exclude worlds --exclude server.properties --exclude ops.json --exclude whitelist.json --exclude permissions.json --exclude backup --exclude bedrock_server --exclude libCrypto.so
 
