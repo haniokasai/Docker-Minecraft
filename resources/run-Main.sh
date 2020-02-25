@@ -47,7 +47,7 @@ if [ -e /minecraft/initialstart ]; then # aaa,txtはあるか？
 	elif [ "${SRVTYPE}" =  "beof" ]; then
 		#DIFFICULTY, GAMEMODE, PERMISSION
 		echo "Preparation BDS has been selected." >&1
-		sh /minecraft/resources/pre-BE-BDS.sh
+		sh -c "bash /minecraft/resources/run-BE-BDS.sh"
 	elif [ "${SRVTYPE}" =  "cuberite" ]; then
 		echo "Preparation cuberite has been selected." >&1
 		sh /minecraft/resources/pre-PC-Cuberite.sh
