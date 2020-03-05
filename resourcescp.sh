@@ -9,3 +9,5 @@ cd /smx/docker_minecraft_res/
 mkdir bdssync
 cd bdssync
 unzip ../bds.zip
+rm /smx/sys/multiphar/pmmp_default.phar
+cp pmmp_*.phar /smx/sys/ /smx/sys/multiphar/
