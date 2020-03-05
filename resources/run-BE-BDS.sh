@@ -17,6 +17,11 @@ sh /minecraft/resources/blockTCP.sh
 
 cd /minecraft/server
 
+if [ ! -e "/minecraft/server/permissions.json"  ]; then
+	echo "touching permissions.json..." >&1
+	echo "[]" > permissions.json
+fi
+
 LD_LIBRARY_PATH=${WDIR}/bdssync ${WDIR}/bdssync/bedrock_server
 
 echo "run bds....done" >&1
