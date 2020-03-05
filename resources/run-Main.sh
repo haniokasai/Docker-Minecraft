@@ -12,8 +12,7 @@ rm -rf /tmp/*
 #############
 #ChkDisk    #
 #############
-used=$(df / | awk 'END{print $5}')
-echo "ストレージは${used}使用されています。90％以上だと危険水準で、100％だと起動しなくなります。" >&1
+bash /minecraft/resources/echoStorage.sh
 
 #############
 #InitProcess#
@@ -112,6 +111,9 @@ fi
 ############
 echo "Main Server Start..." >&1
 
+#ChkDisk
+bash /minecraft/resources/echoStorage.sh
+
 UNIXTIME_START=$(date +%s)
 
 cd /minecraft/server
@@ -163,6 +165,8 @@ rm /minecraft/bin/*.pid
 
 fi
 
+#ChkDisk
+bash /minecraft/resources/echoStorage.sh
 
 if [ -z "${ER}" ]; then
 	echo "Shutdown..." >&2
