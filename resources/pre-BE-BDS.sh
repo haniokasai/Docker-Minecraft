@@ -1,53 +1,10 @@
 #!/bin/sh
 echo "pre process...." >&1
 
-WDIR=/minecraft/resources
-
-#config
-rm /minecraft/server/server.properties
-cp ${WDIR}/server.properties.bds /minecraft/server/server.properties
-cd /minecraft/server
-
 #liblary
 echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local-lib.conf
 echo "LD_LIBRARY_PATH=/usr/local/lib/" >> /etc/environment
-if [ -z "${DIFFICULTY}" ]; then
-	DIFFICULTY="normal"
-fi
-if [ ${DIFFICULTY} = "hard" ];then
-	DIFFICULTY="hard"
-elif [ ${DIFFICULTY} = "peaceful" ];then
-	DIFFICULTY="peaceful"
-elif [ ${DIFFICULTY} = "easy" ];then
-	DIFFICULTY="easy"
-else
-	DIFFICULTY="normal"
-fi
 
-if [ -z "${GAMEMODE}" ]; then
-	GAMEMODE="creative"
-fi
-if [ ${GAMEMODE} = "creative" ];then
-	GAMEMODE="creative"
-else
-	GAMEMODE="survival"
-fi
-
-if [ -z "${PERMISSION}" ]; then
-	DIFFICULTY="operator"
-fi
-
-if [ "${PERMISSION}" = "visitor" ]; then
-	DIFFICULTY="visitor"
-elif [ "${PERMISSION}" = "member" ]; then
-	DIFFICULTY="member"
-else
-	DIFFICULTY="operator"
-fi
-
-sed -i -e "s/=v=srvid=v=/${SRVID}/g" server.properties
-sed -i -e "s/=v=difficulty=v=/${DIFFICULTY}/g" server.properties
-sed -i -e "s/=v=gamemode=v=/${GAMEMODE}/g" server.properties
-sed -i -e "s/=v=permission=v=/${PERMISSION}/g" server.properties
+sh /minecraft/resources/make_Properties_BDS.sh
 
 echo "pre process....done" >&1

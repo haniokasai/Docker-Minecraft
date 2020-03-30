@@ -27,11 +27,15 @@ if [ ! -e "/minecraft/server/whitelist.json"  ]; then
 	echo "[]" > whitelist.json
 fi
 
-if [ ! -e "/minecraft/server/ ops.json"  ]; then
+if [ ! -e "/minecraft/server/ops.json"  ]; then
 	echo "touching  ops.json..." >&1
 	echo "[]" >  ops.json
 fi
 
+if [ ! -e "/minecraft/server/sever.properties"  ]; then
+	echo "making sever.properties..." >&1
+	sh /minecraft/resources/make_Properties_BDS.sh
+fi
 
 LD_LIBRARY_PATH=${WDIR}/bdssync ${WDIR}/bdssync/bedrock_server
 
