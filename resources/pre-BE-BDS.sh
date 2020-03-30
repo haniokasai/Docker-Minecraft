@@ -4,6 +4,7 @@ echo "pre process...." >&1
 WDIR=/minecraft/resources
 
 #config
+rm /minecraft/server/server.properties
 cp ${WDIR}/server.properties.bds /minecraft/server/server.properties
 cd /minecraft/server
 

@@ -22,6 +22,11 @@ if [ ! -e "/minecraft/server/permissions.json"  ]; then
 	echo "[]" > permissions.json
 fi
 
+if [ ! -e "/minecraft/server/whitelist.json"  ]; then
+	echo "touching whitelist.json..." >&1
+	echo "[]" > permissions.json
+fi
+
 LD_LIBRARY_PATH=${WDIR}/bdssync ${WDIR}/bdssync/bedrock_server
 
 echo "run bds....done" >&1
