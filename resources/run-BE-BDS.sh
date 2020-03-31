@@ -37,6 +37,11 @@ if [ ! -e "/minecraft/server/server.properties"  ]; then
 	sh /minecraft/resources/make_Properties_BDS.sh
 fi
 
+if [ -e "/minecraft/server/worlds/level"  ]; then
+	echo "replacing world name in properties world to level..." >&1
+	sed -i -e "s/level-name=world/level-name=level/g" /minecraft/server/server.properties
+fi
+
 LD_LIBRARY_PATH=${WDIR}/bdssync ${WDIR}/bdssync/bedrock_server
 
 echo "run bds....done" >&1
