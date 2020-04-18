@@ -87,6 +87,7 @@ docker cp ホスト/それ　コンテナ/それ<br>
 
 
 ## 識別子
+- /minecraft/server/enablewhitelist BDS利用時、このファイルがあれば、whitelistをオンにする。なければオフにする。
 - /minecraft/buildnow 初回ビルド時に削除されるフラグ、あるとrun-Mainが何もしない
 - /minecraft/initialstart  初回起動時に削除されるフラグ、あるとrun-Mainで初期化を実施する
 - /minecraft/bin/nonftp FTPのオフ とオンフラグ　あるとPMMPプラグインがsyncされる
