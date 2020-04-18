@@ -42,6 +42,14 @@ if [ -e "/minecraft/server/worlds/level"  ]; then
 	sed -i -e "s/level-name=world/level-name=level/g" /minecraft/server/server.properties
 fi
 
+if [ -e "/minecraft/server/enablewhitelist"  ]; then
+		sed -i -e "s/white-list=false/white-list=true/g" /minecraft/server/server.properties
+		echo "whitelistをオンにします..." >&1
+else
+		sed -i -e "s/white-list=true/white-list=false/g" /minecraft/server/server.properties
+		echo "whitelistをオフにします..." >&1
+fi
+
 LD_LIBRARY_PATH=${WDIR}/bdssync ${WDIR}/bdssync/bedrock_server
 
 echo "run bds....done" >&1
