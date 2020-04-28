@@ -6,7 +6,7 @@ cd ${WDIR}/cube
 cp /minecraft/resources/cuberite*.tar.gz ${WDIR}/cube/cuberite.tar.gz
 tar zxvf cuberite.tar.gz
 cp ${WDIR}/cube/cuberite_binfile /minecraft/bin/cuberite_binfile
-cp ${WDIR}/cube/cuberite_src/* /minecraft/server/
+cp -rp ${WDIR}/cube/cuberite_src/* /minecraft/server/
 cd /minecraft/server
 rm -rf ${WDIR}/cube
 #config
