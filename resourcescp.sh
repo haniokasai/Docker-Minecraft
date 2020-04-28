@@ -10,4 +10,6 @@ mkdir bdssync
 cd bdssync
 unzip ../bds.zip
 rm /smx/sys/multiphar/pmmp_default.phar
-cp resources/pmmp_*.phar /smx/sys/multiphar/
+# cp /smx/docker_minecraft_res/resources/pmmp_*.phar /smx/sys/multiphar/
+
+/smx/docker_minecraft_res/bdssync/*.debug
