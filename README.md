@@ -5,6 +5,8 @@ Docker for Minecraft
 - IP制限
 - SFTP
 
+# CMD
+
 ```bash
 docker create --name=コンテナ名 \
 	--storage-opt size=0.5g --memory 100M --cpus 0.3 --cap-add=NET_ADMIN \
@@ -38,6 +40,12 @@ docker start new
 docker logs new
 docker rm -f new
 ```
+
+```
+ git checkout . ; git pull ; chmod +x resourcescp.sh ; ./resourcescp.sh
+```
+
+
 
 # Sysinstall
 
