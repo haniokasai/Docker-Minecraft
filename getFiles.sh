@@ -1,2 +1,2 @@
 #!/bin/sh
-wget -O resources/bds.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.16.200.02.zip
+wget -O resources/bds.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.16.201.02.zip
